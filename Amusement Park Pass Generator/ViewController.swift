@@ -9,10 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let Thomas: Guest = Guest(entrantType: .classicGuest)
+    let Tony = Employee(entrantType: .managerEmployee, firstName: "Tony", lastName: "Malcom", streetAddress: "123 Bacon Street", city: "Portland", state: "Oregon", zipCode: 94350)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        print("Guest = \(Thomas.entrantType.rawValue)\n")
+        print("Employee = \(Tony.entrantType.rawValue)\n")
     }
 
     override func didReceiveMemoryWarning() {
