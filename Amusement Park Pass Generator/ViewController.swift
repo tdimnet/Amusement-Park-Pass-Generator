@@ -11,8 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     // Guests
-    let Tony: Guest = Guest(entrantType: .classicGuest)
-    let Hasley: Guest = Guest(entrantType: .vipGuest)
+    let Tony: Guest = Guest(entrantType: .classicGuest, dateOfBirth: nil)
+    let Hasley: Guest = Guest(entrantType: .vipGuest, dateOfBirth: nil)
     
     // Employees
     let Myriam: Employee = Employee(entrantType: .foodServicesEmployee, firstName: "Myriam", lastName: "El Khomri", streetAddress: "4, Boulevard du Pape", city: "Paris", state: "FR", zipCode: 75006)

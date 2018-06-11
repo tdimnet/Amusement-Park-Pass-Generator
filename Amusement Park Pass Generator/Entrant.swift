@@ -6,6 +6,8 @@
 //  Copyright © 2018 Thomas Dimnet. All rights reserved.
 //
 
+import Foundation
+
 // MARK: Entrant
 enum EntrantsTypesEnum: String {
     case classicGuest
@@ -138,7 +140,7 @@ struct Area {
 }
 
 
-
+// MARK: Entrant inc. Guest and Employee
 class Entrant {
     let entrantType: EntrantsTypesEnum
     
@@ -155,15 +157,16 @@ class Entrant {
     }
 }
 
-
-
-// MARK: Guest
 class Guest: Entrant {
+    var dateOfBirth: Date?
     
+    init(entrantType: EntrantsTypesEnum, dateOfBirth: Date?) {
+        self.dateOfBirth = dateOfBirth
+        super.init(entrantType: entrantType)
+    }
 }
 
 
-// MARK: Employee
 class Employee: Entrant {
     let firstName: String
     let lastName: String
