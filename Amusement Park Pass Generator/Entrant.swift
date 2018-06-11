@@ -6,7 +6,7 @@
 //  Copyright © 2018 Thomas Dimnet. All rights reserved.
 //
 
-enum EntrantsTypes: String {
+enum EntrantsTypesEnum: String {
     case classicGuest
     case vipGuest
     case freeChildGuest
@@ -16,7 +16,7 @@ enum EntrantsTypes: String {
     case managerEmployee
 }
 
-extension EntrantsTypes {
+extension EntrantsTypesEnum {
     var name: String {
         switch self {
         case .classicGuest:
@@ -37,7 +37,7 @@ extension EntrantsTypes {
     }
 }
 
-extension EntrantsTypes {
+extension EntrantsTypesEnum {
     var accessLevel: Int {
         switch self {
         case .classicGuest, .vipGuest, .freeChildGuest:
@@ -54,7 +54,7 @@ extension EntrantsTypes {
     }
 }
 
-enum Areas {
+enum AreasEnum {
     case amusementAreas
     case kitchenAreas
     case rideControlAreas
@@ -62,7 +62,7 @@ enum Areas {
     case officheAreas
 }
 
-extension Areas {
+extension AreasEnum {
     var name: String {
         switch self {
         case .amusementAreas:
@@ -79,7 +79,7 @@ extension Areas {
     }
 }
 
-extension Areas {
+extension AreasEnum {
     var accessLevel: Int {
         switch self {
         case .amusementAreas:
@@ -96,17 +96,29 @@ extension Areas {
     }
 }
 
+struct Area {
+    let area: AreasEnum
+    
+    // FIXME: Will need to throw an error later!
+    func isEntrantAllowed(with entrantAccessLevel: Int) -> String {
+        if entrantAccessLevel >= area.accessLevel {
+            return "This user is allowed"
+        }
+        return "This user is not allowed"
+    }
+}
+
 
 class Guest {
-    let entrantType: EntrantsTypes
+    let entrantType: EntrantsTypesEnum
     
-    init(entrantType: EntrantsTypes) {
+    init(entrantType: EntrantsTypesEnum) {
         self.entrantType = entrantType
     }
 }
 
 class Employee {
-    let entrantType: EntrantsTypes
+    let entrantType: EntrantsTypesEnum
     let firstName: String
     let lastName: String
     let streetAddress: String
@@ -114,7 +126,7 @@ class Employee {
     let state: String
     let zipCode: Int
     
-    init(entrantType: EntrantsTypes, firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: Int) {
+    init(entrantType: EntrantsTypesEnum, firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: Int) {
         self.entrantType = entrantType
         self.firstName = firstName
         self.lastName = lastName
