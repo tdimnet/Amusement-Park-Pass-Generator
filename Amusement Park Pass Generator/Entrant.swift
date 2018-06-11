@@ -6,6 +6,7 @@
 //  Copyright © 2018 Thomas Dimnet. All rights reserved.
 //
 
+// MARK: Entrant
 enum EntrantsTypesEnum: String {
     case classicGuest
     case vipGuest
@@ -54,6 +55,34 @@ extension EntrantsTypesEnum {
     }
 }
 
+extension EntrantsTypesEnum {
+    func getFoodDiscount(type: EntrantsTypesEnum) -> Double {
+        switch self {
+        case .vipGuest:
+            return 0.10
+        case .foodServicesEmployee, .rideServicesEmployee, .maintenanceEmployee:
+            return 0.15
+        case .managerEmployee:
+            return 0.25
+        default:
+            return 0.00
+        }
+    }
+    
+    func getMerchandiseDiscount(type: EntrantsTypesEnum) -> Double {
+        switch self {
+        case .vipGuest:
+            return 0.20
+        case .foodServicesEmployee, .rideServicesEmployee, .maintenanceEmployee, .managerEmployee:
+            return 0.25
+        default:
+            return 0.00
+        }
+    }
+}
+
+
+// MARK: Area
 enum AreasEnum {
     case amusementAreas
     case kitchenAreas
@@ -109,16 +138,33 @@ struct Area {
 }
 
 
-class Guest {
+
+class Entrant {
     let entrantType: EntrantsTypesEnum
     
     init(entrantType: EntrantsTypesEnum) {
         self.entrantType = entrantType
     }
+    
+    func getFoodDiscount() -> Double {
+        return self.entrantType.getFoodDiscount(type: self.entrantType)
+    }
+    
+    func getMerchandiseDiscount() -> Double {
+        return self.entrantType.getMerchandiseDiscount(type: self.entrantType)
+    }
 }
 
-class Employee {
-    let entrantType: EntrantsTypesEnum
+
+
+// MARK: Guest
+class Guest: Entrant {
+    
+}
+
+
+// MARK: Employee
+class Employee: Entrant {
     let firstName: String
     let lastName: String
     let streetAddress: String
@@ -127,12 +173,12 @@ class Employee {
     let zipCode: Int
     
     init(entrantType: EntrantsTypesEnum, firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: Int) {
-        self.entrantType = entrantType
         self.firstName = firstName
         self.lastName = lastName
         self.streetAddress = streetAddress
         self.city = city
         self.state = state
         self.zipCode = zipCode
+        super.init(entrantType: entrantType)
     }
 }

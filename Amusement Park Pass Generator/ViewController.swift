@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     // Guests
     let Tony: Guest = Guest(entrantType: .classicGuest)
+    let Hasley: Guest = Guest(entrantType: .vipGuest)
     
     // Employees
     let Myriam: Employee = Employee(entrantType: .foodServicesEmployee, firstName: "Myriam", lastName: "El Khomri", streetAddress: "4, Boulevard du Pape", city: "Paris", state: "FR", zipCode: 75006)
@@ -25,14 +26,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        // Fantasy Kitchen Test
-        print(FantasyKitchen.isEntrantAllowed(with: Myriam.entrantType.accessLevel))
-        print(FantasyKitchen.isEntrantAllowed(with: Tony.entrantType.accessLevel))
-        
-        // Fantasy Maintenance Test
-        print(FantasyWorldMaintenance.isEntrantAllowed(with: Myriam.entrantType.accessLevel))
-        print(FantasyWorldMaintenance.isEntrantAllowed(with: Tony.entrantType.accessLevel))
     }
 
     override func didReceiveMemoryWarning() {
