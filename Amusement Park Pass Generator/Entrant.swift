@@ -7,14 +7,95 @@
 //
 
 enum EntrantsTypes: String {
-    case classicGuest = "Classic Guest"
-    case vipGuest = "VIP Guest"
-    case freeChildGuest = "Free Child Guest"
-    case foodServicesEmployee = "Hourly Employee - Food Services"
-    case rideServicesEmployee = "Hourly Employee - Ride Services"
-    case maintenanceEmployee = "Hourly Employee - Maintenance"
-    case managerEmployee = "Manager"
+    case classicGuest
+    case vipGuest
+    case freeChildGuest
+    case foodServicesEmployee
+    case rideServicesEmployee
+    case maintenanceEmployee
+    case managerEmployee
 }
+
+extension EntrantsTypes {
+    var name: String {
+        switch self {
+        case .classicGuest:
+            return "Classic Guest"
+        case .vipGuest:
+            return "VIP Guest"
+        case .freeChildGuest:
+            return "Free Child Guest"
+        case .foodServicesEmployee:
+            return "Hourly Employee - Food Services"
+        case .rideServicesEmployee:
+            return "Hourly Employee - Ride Services"
+        case .maintenanceEmployee:
+            return "Hourly Employee - Maintenance"
+        case .managerEmployee:
+            return "Manager"
+        }
+    }
+}
+
+extension EntrantsTypes {
+    var accessLevel: Int {
+        switch self {
+        case .classicGuest, .vipGuest, .freeChildGuest:
+            return 1
+        case .foodServicesEmployee:
+            return 3
+        case .rideServicesEmployee:
+            return 6
+        case .maintenanceEmployee:
+            return 10
+        case .managerEmployee:
+            return 15
+        }
+    }
+}
+
+enum Areas {
+    case amusementAreas
+    case kitchenAreas
+    case rideControlAreas
+    case maintenanceAreas
+    case officheAreas
+}
+
+extension Areas {
+    var name: String {
+        switch self {
+        case .amusementAreas:
+            return "Amusement Areas"
+        case .kitchenAreas:
+            return "Kitchen Areas"
+        case .rideControlAreas:
+            return "Ride Control Areas"
+        case .maintenanceAreas:
+            return "Maintenance Areas"
+        case .officheAreas:
+            return "Office Areas"
+        }
+    }
+}
+
+extension Areas {
+    var accessLevel: Int {
+        switch self {
+        case .amusementAreas:
+            return 1
+        case .kitchenAreas:
+            return 2
+        case .rideControlAreas:
+            return 3
+        case .maintenanceAreas:
+            return 4
+        case .officheAreas:
+            return 5
+        }
+    }
+}
+
 
 class Guest {
     let entrantType: EntrantsTypes

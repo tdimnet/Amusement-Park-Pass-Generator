@@ -10,15 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let Thomas: Guest = Guest(entrantType: .classicGuest)
-    let Tony = Employee(entrantType: .managerEmployee, firstName: "Tony", lastName: "Malcom", streetAddress: "123 Bacon Street", city: "Portland", state: "Oregon", zipCode: 94350)
+    // Guests
+    let Tony: Guest = Guest(entrantType: .classicGuest)
+    
+    // Employees
+    let Myriam: Employee = Employee(entrantType: .foodServicesEmployee, firstName: "Myriam", lastName: "El Khomri", streetAddress: "4, Boulevard du Pape", city: "Paris", state: "FR", zipCode: 75006)
+    let Mark: Employee = Employee(entrantType: .maintenanceEmployee, firstName: "Mark", lastName: "Manson", streetAddress: "FooBar Street", city: "Foo", state: "Bar", zipCode: 34245)
+    let Jordan: Employee = Employee(entrantType: .managerEmployee, firstName: "Jordan", lastName: "Servan", streetAddress: "83, boulevard Charles de Gaule", city: "Sannois", state: "FR", zipCode: 95110)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print(Tony.entrantType.name)
+        print(Tony.entrantType.accessLevel)
         
-        print("Guest = \(Thomas.entrantType.rawValue)\n")
-        print("Employee = \(Tony.entrantType.rawValue)\n")
+        print(Myriam.entrantType.name)
+        print(Myriam.entrantType.accessLevel)
     }
 
     override func didReceiveMemoryWarning() {
