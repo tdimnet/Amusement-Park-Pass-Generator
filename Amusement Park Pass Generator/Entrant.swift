@@ -142,10 +142,16 @@ struct Area {
 
 // MARK: Entrant inc. Guest and Employee
 
+enum EntrantErros: Error {
+    case entrantTypeMissing
+    case firstNameMissing
+}
+
 class Entrant {
     let entrantType: EntrantsTypesEnum
 
-    init(entrantType: EntrantsTypesEnum) {
+    init(entrantType: EntrantsTypesEnum?) throws {
+        guard let entrantType = entrantType else { throw EntrantErros.entrantTypeMissing }
         self.entrantType = entrantType
     }
 
@@ -167,7 +173,7 @@ class Guest: Entrant {
     let state: String?
     let zipCode: Int?
 
-    init(entrantType: EntrantsTypesEnum, dateOfBirth: Date?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) throws {
+    init(entrantType: EntrantsTypesEnum?, dateOfBirth: Date?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) throws {
         self.dateOfBirth = dateOfBirth
         self.firstName = firstName
         self.lastName = lastName
@@ -175,12 +181,11 @@ class Guest: Entrant {
         self.city = city
         self.state = state
         self.zipCode = zipCode
-        super.init(entrantType: entrantType)
+        try super.init(entrantType: entrantType)
     }
 }
 
 class Employee: Entrant {
-    let dateOfBirth: Date?
     let firstName: String
     let lastName: String
     let streetAddress: String
@@ -188,14 +193,17 @@ class Employee: Entrant {
     let state: String
     let zipCode: Int
 
-    init(entrantType: EntrantsTypesEnum, dateOfBirth: Date?, firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: Int) {
-        self.dateOfBirth = dateOfBirth
+    init(entrantType: EntrantsTypesEnum?, firstName: String?, lastName: String, streetAddress: String, city: String, state: String, zipCode: Int) throws {
+        guard let firstName = firstName else { throw EntrantErros.firstNameMissing }
+        
+        
+        
         self.firstName = firstName
         self.lastName = lastName
         self.streetAddress = streetAddress
         self.city = city
         self.state = state
         self.zipCode = zipCode
-        super.init(entrantType: entrantType)
+        try super.init(entrantType: entrantType)
     }
 }

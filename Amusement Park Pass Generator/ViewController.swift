@@ -10,22 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // Guests
-    let Tony: Guest = Guest(entrantType: .classicGuest, dateOfBirth: nil)
-    let Hasley: Guest = Guest(entrantType: .vipGuest, dateOfBirth: nil)
     
-    // Employees
-    let Myriam: Employee = Employee(entrantType: .foodServicesEmployee, firstName: "Myriam", lastName: "El Khomri", streetAddress: "4, Boulevard du Pape", city: "Paris", state: "FR", zipCode: 75006)
-    let Mark: Employee = Employee(entrantType: .maintenanceEmployee, firstName: "Mark", lastName: "Manson", streetAddress: "FooBar Street", city: "Foo", state: "Bar", zipCode: 34245)
-    let Jordan: Employee = Employee(entrantType: .managerEmployee, firstName: "Jordan", lastName: "Servan", streetAddress: "83, boulevard Charles de Gaule", city: "Sannois", state: "FR", zipCode: 95110)
-    
-    // Areas
-    let FantasyKitchen: Area = Area(area: .rideControlAreas)
-    let FantasyWorldMaintenance: Area = Area(area: .maintenanceAreas)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        do {
+            let Tony = try Employee(entrantType: nil, dateOfBirth: nil, firstName: "Thomas", lastName: "safhj", streetAddress: "sldfhjk", city: "asdfihj", state: "sdlfkj", zipCode: 11111)
+        } catch let error {
+            print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
