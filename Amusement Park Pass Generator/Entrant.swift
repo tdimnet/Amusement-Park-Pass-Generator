@@ -58,7 +58,7 @@ extension EntrantsTypesEnum {
 }
 
 extension EntrantsTypesEnum {
-    func getFoodDiscount(type: EntrantsTypesEnum) -> Double {
+    func getFoodDiscount() -> Double {
         switch self {
         case .vipGuest:
             return 0.10
@@ -71,7 +71,7 @@ extension EntrantsTypesEnum {
         }
     }
     
-    func getMerchandiseDiscount(type: EntrantsTypesEnum) -> Double {
+    func getMerchandiseDiscount() -> Double {
         switch self {
         case .vipGuest:
             return 0.20
@@ -141,27 +141,41 @@ struct Area {
 
 
 // MARK: Entrant inc. Guest and Employee
+
 class Entrant {
     let entrantType: EntrantsTypesEnum
-    
+
     init(entrantType: EntrantsTypesEnum) {
         self.entrantType = entrantType
     }
-    
+
     func getFoodDiscount() -> Double {
-        return self.entrantType.getFoodDiscount(type: self.entrantType)
+        return entrantType.getFoodDiscount()
     }
-    
+
     func getMerchandiseDiscount() -> Double {
-        return self.entrantType.getMerchandiseDiscount(type: self.entrantType)
+        return entrantType.getMerchandiseDiscount()
     }
 }
 
 class Guest: Entrant {
-    var dateOfBirth: Date?
+    let dateOfBirth: Date?
     
-    init(entrantType: EntrantsTypesEnum, dateOfBirth: Date?) {
+    let firstName: String?
+    let lastName: String?
+    let streetAddress: String?
+    let city: String?
+    let state: String?
+    let zipCode: Int?
+
+    init(entrantType: EntrantsTypesEnum, dateOfBirth: Date?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) {
         self.dateOfBirth = dateOfBirth
+        self.firstName = firstName
+        self.lastName = lastName
+        self.streetAddress = streetAddress
+        self.city = city
+        self.state = state
+        self.zipCode = zipCode
         super.init(entrantType: entrantType)
     }
 }
@@ -174,7 +188,7 @@ class Employee: Entrant {
     let city: String
     let state: String
     let zipCode: Int
-    
+
     init(entrantType: EntrantsTypesEnum, firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: Int) {
         self.firstName = firstName
         self.lastName = lastName
