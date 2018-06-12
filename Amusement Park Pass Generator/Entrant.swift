@@ -160,7 +160,6 @@ class Entrant {
 
 class Guest: Entrant {
     let dateOfBirth: Date?
-    
     let firstName: String?
     let lastName: String?
     let streetAddress: String?
@@ -168,7 +167,7 @@ class Guest: Entrant {
     let state: String?
     let zipCode: Int?
 
-    init(entrantType: EntrantsTypesEnum, dateOfBirth: Date?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) {
+    init(entrantType: EntrantsTypesEnum, dateOfBirth: Date?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) throws {
         self.dateOfBirth = dateOfBirth
         self.firstName = firstName
         self.lastName = lastName
@@ -180,8 +179,8 @@ class Guest: Entrant {
     }
 }
 
-
 class Employee: Entrant {
+    let dateOfBirth: Date?
     let firstName: String
     let lastName: String
     let streetAddress: String
@@ -189,7 +188,8 @@ class Employee: Entrant {
     let state: String
     let zipCode: Int
 
-    init(entrantType: EntrantsTypesEnum, firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: Int) {
+    init(entrantType: EntrantsTypesEnum, dateOfBirth: Date?, firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: Int) {
+        self.dateOfBirth = dateOfBirth
         self.firstName = firstName
         self.lastName = lastName
         self.streetAddress = streetAddress
