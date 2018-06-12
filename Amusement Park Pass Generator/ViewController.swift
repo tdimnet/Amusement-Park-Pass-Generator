@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         do {
-            let Tony = try Employee(entrantType: nil, dateOfBirth: nil, firstName: "Thomas", lastName: "safhj", streetAddress: "sldfhjk", city: "asdfihj", state: "sdlfkj", zipCode: 11111)
+            let Tony = try Employee(entrantType: nil, firstName: "Thomas", lastName: nil, streetAddress: "sldfhjk", city: "asdfihj", state: "sdlfkj", zipCode: 11111)
         } catch let error {
             print(error)
         }
