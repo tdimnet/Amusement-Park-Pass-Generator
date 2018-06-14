@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493978A520D2AF0F0080BE0A /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A420D2AF0F0080BE0A /* Tests.swift */; };
 		4981F5D520CE7C520092C788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981F5D420CE7C520092C788 /* AppDelegate.swift */; };
 		4981F5D720CE7C520092C788 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981F5D620CE7C520092C788 /* ViewController.swift */; };
 		4981F5DA20CE7C520092C788 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4981F5D820CE7C520092C788 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493978A420D2AF0F0080BE0A /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		4981F5D120CE7C520092C788 /* Amusement Park Pass Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amusement Park Pass Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4981F5D420CE7C520092C788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4981F5D620CE7C520092C788 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				4981F5DD20CE7C530092C788 /* LaunchScreen.storyboard */,
 				4981F5E020CE7C530092C788 /* Info.plist */,
 				49AD6B6B20CEAD8C004AFC63 /* Entrant.swift */,
+				493978A420D2AF0F0080BE0A /* Tests.swift */,
 			);
 			path = "Amusement Park Pass Generator";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49AD6B6C20CEAD8C004AFC63 /* Entrant.swift in Sources */,
+				493978A520D2AF0F0080BE0A /* Tests.swift in Sources */,
 				4981F5D720CE7C520092C788 /* ViewController.swift in Sources */,
 				4981F5D520CE7C520092C788 /* AppDelegate.swift in Sources */,
 			);
