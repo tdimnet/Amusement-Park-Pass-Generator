@@ -184,6 +184,15 @@ class Guest: Entrant {
         self.zipCode = zipCode
         try super.init(entrantType: entrantType)
     }
+    
+    func isUserTooOld(dateOfBirth: Date) -> Bool {
+        let currentDate = Date()
+        
+        if currentDate > dateOfBirth {
+            return false
+        }
+        return true
+    }
 }
 
 class Employee: Entrant {

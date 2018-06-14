@@ -13,7 +13,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        Test.testEmployeeMissingInfo()
+        // Discount Tests
+        DiscountTests.isClassicGuestHasDiscount()
+        DiscountTests.isVIPGuestHasDiscount()
+        
     }
 
     override func didReceiveMemoryWarning() {
