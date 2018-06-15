@@ -14,9 +14,9 @@ class DiscountTests {
         do {
             let guest = try Guest(entrantType: .classicGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
             if guest.getFoodDiscount() == 0.0 && guest.getMerchandiseDiscount() == 0 {
-                print("EMPLOYEE TEST: OK: Classic Guest has no discount!")
+                print("DISCOUNT TEST: OK: Classic Guest has no discount!")
             } else {
-                print("EMPLOYEE TEST: An error occurs! Classic Guest should have not discount!")
+                print("DISCOUNT TEST: An error occurs! Classic Guest should have not discount!")
             }
         } catch let error {
             print(error)
@@ -28,9 +28,9 @@ class DiscountTests {
         do {
             let vipGuest = try Guest(entrantType: .vipGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
             if vipGuest.getFoodDiscount() == 0.1 && vipGuest.getMerchandiseDiscount() == 0.2 {
-                print("EMPLOYEE TEST: OK: VIP Guest has 10% discount on Food and 20% discount on Merchandise!")
+                print("DISCOUNT TEST: OK: VIP Guest has 10% discount on Food and 20% discount on Merchandise!")
             } else {
-                print("EMPLOYEE TEST: An error occurs! VIP Guest discount are not correct!")
+                print("DISCOUNT TEST: An error occurs! VIP Guest discount are not correct!")
             }
         } catch let error {
             print(error)
@@ -42,9 +42,9 @@ class DiscountTests {
         do {
             let freeChildGuest = try Guest(entrantType: .freeChildGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
             if freeChildGuest.getFoodDiscount() == 0.0 && freeChildGuest.getMerchandiseDiscount() == 0.0 {
-                print("EMPLOYEE TEST: OK: Free Child Guest has no discount!")
+                print("DISCOUNT TEST: OK: Free Child Guest has no discount!")
             } else {
-                print("EMPLOYEE TEST: An error occurs! Free Child Guest should have not discount!")
+                print("DISCOUNT TEST: An error occurs! Free Child Guest should have not discount!")
             }
         } catch let error {
             print(error)
@@ -56,9 +56,9 @@ class DiscountTests {
         do {
             let foodServiceEmploye = try Employee(entrantType: .foodServicesEmployee, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: 12345)
             if foodServiceEmploye.getFoodDiscount() == 0.15 && foodServiceEmploye.getMerchandiseDiscount() == 0.25 {
-                print("EMPLOYEE TEST: OK: Food Service Employee has 15% discount on Food and 25% discount on Merchandise!")
+                print("DISCOUNT TEST: OK: Food Service Employee has 15% discount on Food and 25% discount on Merchandise!")
             } else {
-                print("EMPLOYEE TEST: An error occurs! Food Service Employee discount are not correct!")
+                print("DISCOUNT TEST: An error occurs! Food Service Employee discount are not correct!")
             }
         } catch let error {
             print(error)
@@ -70,9 +70,9 @@ class DiscountTests {
         do {
             let rideServiceEmploye = try Employee(entrantType: .rideServicesEmployee, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: 12345)
             if rideServiceEmploye.getFoodDiscount() == 0.15 && rideServiceEmploye.getMerchandiseDiscount() == 0.25 {
-                print("EMPLOYEE TEST: OK: Ride Service Employee has 15% discount on Food and 25% discount on Merchandise!")
+                print("DISCOUNT TEST: OK: Ride Service Employee has 15% discount on Food and 25% discount on Merchandise!")
             } else {
-                print("EMPLOYEE TEST: An error occurs! Ride Service Employee discount are not correct!")
+                print("DISCOUNT TEST: An error occurs! Ride Service Employee discount are not correct!")
             }
         } catch let error {
             print(error)
@@ -84,9 +84,9 @@ class DiscountTests {
         do {
             let maintenanceServiceEmploye = try Employee(entrantType: .maintenanceEmployee, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: 12345)
             if maintenanceServiceEmploye.getFoodDiscount() == 0.15 && maintenanceServiceEmploye.getMerchandiseDiscount() == 0.25 {
-                print("EMPLOYEE TEST: OK: Maintenance Service Employee has 15% discount on Food and 25% discount on Merchandise!")
+                print("DISCOUNT TEST: OK: Maintenance Service Employee has 15% discount on Food and 25% discount on Merchandise!")
             } else {
-                print("EMPLOYEE TEST: An error occurs! Maintenance Service Employee discount are not correct!")
+                print("DISCOUNT TEST: An error occurs! Maintenance Service Employee discount are not correct!")
             }
         } catch let error {
             print(error)
@@ -98,9 +98,9 @@ class DiscountTests {
         do {
             let managerEmploye = try Employee(entrantType: .managerEmployee, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: 12345)
             if managerEmploye.getFoodDiscount() == 0.25 && managerEmploye.getMerchandiseDiscount() == 0.25 {
-                print("EMPLOYEE TEST: OK: Manager Employee has 25% discount on Food and 25% discount on Merchandise!")
+                print("DISCOUNT TEST: OK: Manager Employee has 25% discount on Food and 25% discount on Merchandise!")
             } else {
-                print("EMPLOYEE TEST: An error occurs! Manager Employee discount are not correct!")
+                print("DISCOUNT TEST: An error occurs! Manager Employee discount are not correct!")
             }
         } catch let error {
             print(error)

@@ -16,7 +16,7 @@ class EmployeeTests {
             print("ENTRANT EMPLOYEE TEST: OK: The employe has all the information needed")
         } catch let error {
             print(error)
-            print("DISCOUNT TEST: An error occurs! Employee should have an entrant type!")
+            print("ENTRANT EMPLOYEE TEST: An error occurs! Employee should have an entrant type!")
         }
     }
     
@@ -27,7 +27,7 @@ class EmployeeTests {
             print("ENTRANT EMPLOYEE TEST: OK: The employe has all the information needed")
         } catch let error {
             print(error)
-            print("DISCOUNT TEST: An error occurs! Employee should have a first name!")
+            print("ENTRANT EMPLOYEE TEST: An error occurs! Employee should have a first name!")
         }
     }
     
@@ -38,7 +38,7 @@ class EmployeeTests {
             print("ENTRANT EMPLOYEE TEST: OK: The employe has all the information needed")
         } catch let error {
             print(error)
-            print("DISCOUNT TEST: An error occurs! Employee should have a street address!")
+            print("ENTRANT EMPLOYEE TEST: An error occurs! Employee should have a street address!")
         }
     }
     
@@ -49,7 +49,7 @@ class EmployeeTests {
             print("ENTRANT EMPLOYEE TEST: OK: The employe has all the information needed")
         } catch let error {
             print(error)
-            print("DISCOUNT TEST: An error occurs! Employee should have a state!")
+            print("ENTRANT EMPLOYEE TEST: An error occurs! Employee should have a state!")
         }
     }
     
@@ -60,7 +60,7 @@ class EmployeeTests {
             print("ENTRANT EMPLOYEE TEST: OK: The employe has all the information needed")
         } catch let error {
             print(error)
-            print("DISCOUNT TEST: An error occurs! Employee should have a Zip Code!")
+            print("ENTRANT EMPLOYEE TEST: An error occurs! Employee should have a Zip Code!")
         }
     }
 }
