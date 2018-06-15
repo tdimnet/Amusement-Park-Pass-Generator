@@ -42,6 +42,22 @@ class ViewController: UIViewController {
         EmployeeTests.isEmployeeAddressMissing()
         EmployeeTests.isEmployeeStateMissing()
         EmployeeTests.isEmployeeZipcodeMissing()
+        
+        print("\n")
+        
+        // Guest Area Tests
+        print("GUEST AREA TESTS")
+        GuestAreaTests.isEntrantClassicGuestInAmusementAreasAllowed()
+        GuestAreaTests.isEntrantVIPGuestInKitchenAreasAllowed()
+        GuestAreaTests.isEntrantFreeChildGuestInRideControllAreasAllowed()
+        GuestAreaTests.isEntrantClassicGuestInMaintenanceAreasAllowed()
+        GuestAreaTests.isVIPGuestInOfficeAreasAllowed()
+        
+        print("\n")
+        
+        // Employee Area Tests
+        print("EMPLOYEE AREA TESTS")
+        EmployeeAreaTest.isFoodServiceEmployeeInAreasAllowed()
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		493329A020D3BC540050EED6 /* GuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933299F20D3BC540050EED6 /* GuestTests.swift */; };
+		493329A220D3F48E0050EED6 /* AreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493329A120D3F48E0050EED6 /* AreaTests.swift */; };
 		493978A520D2AF0F0080BE0A /* EmployeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A420D2AF0F0080BE0A /* EmployeeTests.swift */; };
 		493978A720D2B6AC0080BE0A /* DiscountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A620D2B6AC0080BE0A /* DiscountTests.swift */; };
 		4981F5D520CE7C520092C788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981F5D420CE7C520092C788 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		4933299F20D3BC540050EED6 /* GuestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTests.swift; sourceTree = "<group>"; };
+		493329A120D3F48E0050EED6 /* AreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTests.swift; sourceTree = "<group>"; };
 		493978A420D2AF0F0080BE0A /* EmployeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTests.swift; sourceTree = "<group>"; };
 		493978A620D2B6AC0080BE0A /* DiscountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountTests.swift; sourceTree = "<group>"; };
 		4981F5D120CE7C520092C788 /* Amusement Park Pass Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amusement Park Pass Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				493978A420D2AF0F0080BE0A /* EmployeeTests.swift */,
 				493978A620D2B6AC0080BE0A /* DiscountTests.swift */,
 				4933299F20D3BC540050EED6 /* GuestTests.swift */,
+				493329A120D3F48E0050EED6 /* AreaTests.swift */,
 			);
 			path = "Amusement Park Pass Generator";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				493329A020D3BC540050EED6 /* GuestTests.swift in Sources */,
+				493329A220D3F48E0050EED6 /* AreaTests.swift in Sources */,
 				49AD6B6C20CEAD8C004AFC63 /* Entrant.swift in Sources */,
 				493978A720D2B6AC0080BE0A /* DiscountTests.swift in Sources */,
 				493978A520D2AF0F0080BE0A /* EmployeeTests.swift in Sources */,

@@ -133,9 +133,9 @@ struct Area {
     // FIXME: Will need to throw an error later!
     func isEntrantAllowed(with entrantAccessLevel: Int) -> String {
         if entrantAccessLevel >= area.accessLevel {
-            return "This user is allowed"
+            return "Access Granted"
         }
-        return "This user is not allowed"
+        return "Access not allowed"
     }
 }
 
