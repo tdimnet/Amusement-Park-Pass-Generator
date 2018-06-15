@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Discount Tests
+        print("DISCOUNT TEST")
             // Guest
         DiscountTests.isClassicGuestHasDiscount()
         DiscountTests.isVIPGuestHasDiscount()
@@ -24,6 +25,22 @@ class ViewController: UIViewController {
         DiscountTests.isRideServiceEmployeeHasDiscount()
         DiscountTests.isMaintenanceServiceEmployeeHasDiscount()
         DiscountTests.isManagerEmployeeHasDiscount()
+        
+        print("\n")
+        
+        // Guest Tests
+        print("GUEST TESTS")
+        
+        
+        print("\n")
+        
+        // Employee Tests
+        print("EMPLOYEE TESTS")
+        EmployeeTests.isEmployeeEntrantTypeMissing()
+        EmployeeTests.isEmployeFirstNameMissing()
+        EmployeeTests.isEmployeeAddressMissing()
+        EmployeeTests.isEmployeeStateMissing()
+        EmployeeTests.isEmployeeZipcodeMissing()
     }
 
     override func didReceiveMemoryWarning() {

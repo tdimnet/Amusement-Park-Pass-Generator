@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		493978A520D2AF0F0080BE0A /* EntrantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A420D2AF0F0080BE0A /* EntrantTests.swift */; };
+		493978A520D2AF0F0080BE0A /* EmployeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A420D2AF0F0080BE0A /* EmployeeTests.swift */; };
 		493978A720D2B6AC0080BE0A /* DiscountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A620D2B6AC0080BE0A /* DiscountTests.swift */; };
 		493978A920D2C4590080BE0A /* RideAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A820D2C4590080BE0A /* RideAccessTests.swift */; };
 		4981F5D520CE7C520092C788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981F5D420CE7C520092C788 /* AppDelegate.swift */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		493978A420D2AF0F0080BE0A /* EntrantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantTests.swift; sourceTree = "<group>"; };
+		493978A420D2AF0F0080BE0A /* EmployeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTests.swift; sourceTree = "<group>"; };
 		493978A620D2B6AC0080BE0A /* DiscountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountTests.swift; sourceTree = "<group>"; };
 		493978A820D2C4590080BE0A /* RideAccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAccessTests.swift; sourceTree = "<group>"; };
 		4981F5D120CE7C520092C788 /* Amusement Park Pass Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amusement Park Pass Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +69,7 @@
 				4981F5DD20CE7C530092C788 /* LaunchScreen.storyboard */,
 				4981F5E020CE7C530092C788 /* Info.plist */,
 				49AD6B6B20CEAD8C004AFC63 /* Entrant.swift */,
-				493978A420D2AF0F0080BE0A /* EntrantTests.swift */,
+				493978A420D2AF0F0080BE0A /* EmployeeTests.swift */,
 				493978A620D2B6AC0080BE0A /* DiscountTests.swift */,
 				493978A820D2C4590080BE0A /* RideAccessTests.swift */,
 			);
@@ -149,7 +149,7 @@
 			files = (
 				49AD6B6C20CEAD8C004AFC63 /* Entrant.swift in Sources */,
 				493978A720D2B6AC0080BE0A /* DiscountTests.swift in Sources */,
-				493978A520D2AF0F0080BE0A /* EntrantTests.swift in Sources */,
+				493978A520D2AF0F0080BE0A /* EmployeeTests.swift in Sources */,
 				493978A920D2C4590080BE0A /* RideAccessTests.swift in Sources */,
 				4981F5D720CE7C520092C788 /* ViewController.swift in Sources */,
 				4981F5D520CE7C520092C788 /* AppDelegate.swift in Sources */,
