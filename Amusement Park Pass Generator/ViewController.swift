@@ -30,7 +30,8 @@ class ViewController: UIViewController {
         
         // Guest Tests
         print("GUEST TESTS")
-        GuestTests.isEmployeeEntrantTypeMissing()
+        GuestTests.isGuestEntrantTypeMissing()
+        GuestTests.isGuestEntrantNeedRequiredInfo()
         
         print("\n")
         
