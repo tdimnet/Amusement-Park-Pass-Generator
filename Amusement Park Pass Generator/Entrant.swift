@@ -142,10 +142,17 @@ struct Area {
 
 // MARK: Entrant inc. Guest and Employee
 
+enum EntrantErros: Error {
+    case entrantError(reason: String)
+    case nameError(reason: String)
+    case addressError(reason: String)
+}
+
 class Entrant {
     let entrantType: EntrantsTypesEnum
 
-    init(entrantType: EntrantsTypesEnum) {
+    init(entrantType: EntrantsTypesEnum?) throws {
+        guard let entrantType = entrantType else { throw EntrantErros.entrantError(reason: "Entrant Type is missing") }
         self.entrantType = entrantType
     }
 
@@ -167,7 +174,7 @@ class Guest: Entrant {
     let state: String?
     let zipCode: Int?
 
-    init(entrantType: EntrantsTypesEnum, dateOfBirth: Date?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) throws {
+    init(entrantType: EntrantsTypesEnum?, dateOfBirth: Date?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) throws {
         self.dateOfBirth = dateOfBirth
         self.firstName = firstName
         self.lastName = lastName
@@ -175,12 +182,20 @@ class Guest: Entrant {
         self.city = city
         self.state = state
         self.zipCode = zipCode
-        super.init(entrantType: entrantType)
+        try super.init(entrantType: entrantType)
+    }
+    
+    func isUserTooOld(dateOfBirth: Date) -> Bool {
+        let currentDate = Date()
+        
+        if currentDate > dateOfBirth {
+            return false
+        }
+        return true
     }
 }
 
 class Employee: Entrant {
-    let dateOfBirth: Date?
     let firstName: String
     let lastName: String
     let streetAddress: String
@@ -188,14 +203,21 @@ class Employee: Entrant {
     let state: String
     let zipCode: Int
 
-    init(entrantType: EntrantsTypesEnum, dateOfBirth: Date?, firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: Int) {
-        self.dateOfBirth = dateOfBirth
+    init(entrantType: EntrantsTypesEnum?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) throws {
+        guard let firstName = firstName else { throw EntrantErros.nameError(reason: "First Name is missing") }
+        guard let lastName = lastName else { throw EntrantErros.nameError(reason: "Last Name is missing") }
+        
+        guard let streetAddress = streetAddress else { throw EntrantErros.addressError(reason: "Street Address is missing") }
+        guard let city = city else { throw EntrantErros.addressError(reason: "City is missing") }
+        guard let state = state else { throw EntrantErros.addressError(reason: "State is missing") }
+        guard let zipCode = zipCode else { throw EntrantErros.addressError(reason: "Zip code is missing") }
+        
         self.firstName = firstName
         self.lastName = lastName
         self.streetAddress = streetAddress
         self.city = city
         self.state = state
         self.zipCode = zipCode
-        super.init(entrantType: entrantType)
+        try super.init(entrantType: entrantType)
     }
 }
