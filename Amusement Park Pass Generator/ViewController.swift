@@ -65,6 +65,13 @@ class ViewController: UIViewController {
         EmployeeAreaTest.isMaintenanceEmployeeInOfficeAreasAllowed()
         EmployeeAreaTest.isManagerEmployeeInOfficeAreasAllowed()
         EmployeeAreaTest.isManagerEmployeeInMaintenanceAreasAllowed()
+        
+        print("\n")
+        
+        // Ride Access Tests
+        print("Ride Access")
+        RideAccessTests.isClassicGuestCanSkipRideAccessLines()
+        RideAccessTests.isVipGuestCanSkipRideAccessLines()
     }
 
     override func didReceiveMemoryWarning() {

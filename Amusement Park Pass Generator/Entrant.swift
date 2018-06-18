@@ -58,6 +58,17 @@ extension EntrantsTypesEnum {
 }
 
 extension EntrantsTypesEnum {
+    var rideAccessLevel: Int {
+        switch self {
+        case .vipGuest:
+            return 2
+        default:
+            return 1
+        }
+    }
+}
+
+extension EntrantsTypesEnum {
     func getFoodDiscount() -> Double {
         switch self {
         case .vipGuest:
@@ -138,6 +149,22 @@ struct Area {
             return "Access Granted"
         }
         return "Access not allowed"
+    }
+}
+
+enum RideAccessActionsEnum: Int {
+    case accessAllRides = 1
+    case skipAllRideLines = 2
+}
+
+struct RideAccess {
+    func canUserSkipAreaAccessLines(with userAccessLevel: Int, and rideAccessActions: Int) -> String {
+        if (userAccessLevel == RideAccessActionsEnum.skipAllRideLines.rawValue) {
+            return "The user is allowed to skip ride access lines"
+        } else if (userAccessLevel >= RideAccessActionsEnum.accessAllRides.rawValue) {
+            return "The user can access the ride area"
+        }
+        return "The user is cannot to skip ride access lines"
     }
 }
 
