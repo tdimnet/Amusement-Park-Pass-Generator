@@ -35,6 +35,45 @@ class EmployeeAreaTest {
         }
     }
     
+    static func isFoodServiceEmployeeInRideAreasAllowed() {
+        do {
+            let employee = try Employee(entrantType: .foodServicesEmployee, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: 12345)
+            let employeeAccess = employee.entrantType.accessLevel
+            let area = Area(area: .rideControlAreas)
+            
+            print("AREA TEST: A Food Service Employee wants to access a Ride Control area")
+            print(area.isEntrantAllowed(with: employeeAccess))
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    static func isRideServiceEmployeeInRideAreasAllowed() {
+        do {
+            let employee = try Employee(entrantType: .rideServicesEmployee, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: 12345)
+            let employeeAccess = employee.entrantType.accessLevel
+            let area = Area(area: .rideControlAreas)
+            
+            print("AREA TEST: A Ride Service Employee wants to access a Ride Control area")
+            print(area.isEntrantAllowed(with: employeeAccess))
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    static func isRideServiceEmployeeInKitchenAreasAllowed() {
+        do {
+            let employee = try Employee(entrantType: .rideServicesEmployee, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: 12345)
+            let employeeAccess = employee.entrantType.accessLevel
+            let area = Area(area: .kitchenAreas)
+            
+            print("AREA TEST: A Ride Service Employee wants to access a Kitchen Control area")
+            print(area.isEntrantAllowed(with: employeeAccess))
+        } catch let error {
+            print(error)
+        }
+    }
+    
     static func isMaintenanceEmployeeInOfficeAreasAllowed() {
         do {
             let employee = try Employee(entrantType: .maintenanceEmployee, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: 12345)

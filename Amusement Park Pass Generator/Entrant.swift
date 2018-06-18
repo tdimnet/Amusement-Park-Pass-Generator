@@ -48,7 +48,7 @@ extension EntrantsTypesEnum {
         case .foodServicesEmployee:
             return 3
         case .rideServicesEmployee:
-            return 6
+            return 4
         case .maintenanceEmployee:
             return 10
         case .managerEmployee:
@@ -118,7 +118,7 @@ extension AreasEnum {
         case .kitchenAreas:
             return 3
         case .rideControlAreas:
-            return 3
+            return 4
         case .maintenanceAreas:
             return 6
         case .officheAreas:
@@ -132,7 +132,9 @@ struct Area {
     
     // FIXME: Will need to throw an error later!
     func isEntrantAllowed(with entrantAccessLevel: Int) -> String {
-        if entrantAccessLevel >= area.accessLevel {
+        if entrantAccessLevel == EntrantsTypesEnum.rideServicesEmployee.accessLevel && area.accessLevel == AreasEnum.kitchenAreas.accessLevel {
+            return "Access not allowed"
+        } else if entrantAccessLevel >= area.accessLevel {
             return "Access Granted"
         }
         return "Access not allowed"
