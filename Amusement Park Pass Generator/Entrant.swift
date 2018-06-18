@@ -116,13 +116,13 @@ extension AreasEnum {
         case .amusementAreas:
             return 1
         case .kitchenAreas:
-            return 2
+            return 3
         case .rideControlAreas:
             return 3
         case .maintenanceAreas:
-            return 4
+            return 6
         case .officheAreas:
-            return 5
+            return 15
         }
     }
 }

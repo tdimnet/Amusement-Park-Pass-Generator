@@ -77,18 +77,3 @@ class GuestAreaTests {
         }
     }
 }
-
-class EmployeeAreaTest {
-    static func isFoodServiceEmployeeInAreasAllowed() {
-        do {
-            let employee = try Employee(entrantType: .foodServicesEmployee, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: 12345)
-            let employeeAccess = employee.entrantType.accessLevel
-            let area = Area(area: .amusementAreas)
-            
-            print("AREA TEST: A Food Service Employee wants to access a Amusement area")
-            print(area.isEntrantAllowed(with: employeeAccess))
-        } catch let error {
-            print(error)
-        }
-    }
-}

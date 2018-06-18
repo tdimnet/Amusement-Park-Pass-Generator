@@ -57,7 +57,11 @@ class ViewController: UIViewController {
         
         // Employee Area Tests
         print("EMPLOYEE AREA TESTS")
-        EmployeeAreaTest.isFoodServiceEmployeeInAreasAllowed()
+        EmployeeAreaTest.isFoodServiceEmployeeInAmusementAreasAllowed()
+        EmployeeAreaTest.isFoodServiceEmployeeInKitchenAreasAllowed()
+        EmployeeAreaTest.isMaintenanceEmployeeInOfficeAreasAllowed()
+        EmployeeAreaTest.isManagerEmployeeInOfficeAreasAllowed()
+        EmployeeAreaTest.isManagerEmployeeInMaintenanceAreasAllowed()
     }
 
     override func didReceiveMemoryWarning() {
