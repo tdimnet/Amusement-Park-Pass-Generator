@@ -28,4 +28,17 @@ class GuestTests {
             print("ENTRANT GUEST TEST: OK: The guest firstname should not have required info")
         }
     }
+    
+    static func isGuestEntrantHasBirthdayError() {
+        do {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let guestDateOfBirth = formatter.date(from: "2020/02/02")
+            let guest = try Guest(entrantType: .classicGuest, dateOfBirth: guestDateOfBirth, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
+            print("ENTRANT GUEST BIRTHDATE TEST: OK: The guest does not have any required info")
+        } catch let error {
+            print(error)
+            print("ENTRANT GUEST BIRTHDATE TEST: OK: The guest firstname should not have required info")
+        }
+    }
 }

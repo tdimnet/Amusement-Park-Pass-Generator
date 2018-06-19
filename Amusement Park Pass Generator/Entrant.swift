@@ -204,6 +204,7 @@ class Guest: Entrant {
     let zipCode: Int?
 
     init(entrantType: EntrantsTypesEnum?, dateOfBirth: Date?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) throws {
+        
         self.dateOfBirth = dateOfBirth
         self.firstName = firstName
         self.lastName = lastName
@@ -212,15 +213,23 @@ class Guest: Entrant {
         self.state = state
         self.zipCode = zipCode
         try super.init(entrantType: entrantType)
+        
+        if let date = dateOfBirth {
+            isUserTooOld(dateOfBirth: date)
+        }
     }
     
-    func isUserTooOld(dateOfBirth: Date) -> Bool {
+    func isUserTooOld(dateOfBirth: Date) {
         let currentDate = Date()
+        let currentDateInTimeStamp = Date().timeIntervalSince1970
+        let yearInTimeStamp: Double = 31556926
+        let fiveYearsInTimeStamp: Double = yearInTimeStamp * 5
+        let fiveYearsCurrentDate: Double = currentDateInTimeStamp - fiveYearsInTimeStamp
+        let fiveYears = Date(timeIntervalSince1970: fiveYearsCurrentDate)
         
-        if currentDate > dateOfBirth {
-            return false
-        }
-        return true
+        print(currentDate)
+        print(fiveYears)
+        print(dateOfBirth)
     }
 }
 

@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         print("GUEST TESTS")
         GuestTests.isGuestEntrantTypeMissing()
         GuestTests.isGuestEntrantNeedRequiredInfo()
+        GuestTests.isGuestEntrantHasBirthdayError()
         
         print("\n")
         
