@@ -46,24 +46,28 @@ extension EntrantsTypesEnum {
         case .classicGuest, .vipGuest, .freeChildGuest:
             return 1
         case .foodServicesEmployee:
-            return 3
+            return 2
         case .rideServicesEmployee:
-            return 4
+            return 3
         case .maintenanceEmployee:
-            return 10
+            return 4
         case .managerEmployee:
-            return 15
+            return 5
         }
     }
 }
 
 extension EntrantsTypesEnum {
-    var rideAccessLevel: Int {
+    func canEntrantSkipRideLines() -> (isAbleToSkipLines: Bool, message: String) {
         switch self {
         case .vipGuest:
-            return 2
+            let isAble = true
+            let message = "Entrant is able to skip ride lines"
+            return (isAble, message)
         default:
-            return 1
+            let isAble = false
+            let message = "Entrant cannot skip ride lines"
+            return (isAble, message)
         }
     }
 }
@@ -115,5 +119,9 @@ class Entrant: EntrantProtocol {
 
     func getMerchandiseDiscount() -> Double {
         return entrantType.getMerchandiseDiscount()
+    }
+    
+    func canEntrantSkipRideLines(entrant: Entrant) -> (isAbleToSkipLines: Bool, message: String) {
+        return entrant.entrantType.canEntrantSkipRideLines()
     }
 }

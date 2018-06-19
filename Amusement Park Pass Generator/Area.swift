@@ -40,13 +40,13 @@ extension AreasEnum {
         case .amusementAreas:
             return 1
         case .kitchenAreas:
-            return 3
+            return 2
         case .rideControlAreas:
-            return 4
+            return 3
         case .maintenanceAreas:
-            return 6
+            return 4
         case .officheAreas:
-            return 15
+            return 5
         }
     }
 }
@@ -58,7 +58,6 @@ class Area {
         self.area = area
     }
     
-    // FIXME: Will need to throw an error later!
     func swipePass(with entrantAccessLevel: Int) -> String {
         if entrantAccessLevel == EntrantsTypesEnum.rideServicesEmployee.accessLevel && area.accessLevel == AreasEnum.kitchenAreas.accessLevel {
             return "Access not allowed"
