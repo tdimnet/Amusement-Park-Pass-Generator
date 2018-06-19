@@ -73,8 +73,7 @@ class ViewController: UIViewController {
         
         // Ride Access Tests
         print("Ride Access")
-        RideAccessTests.isClassicGuestCanSkipRideAccessLines()
-        RideAccessTests.isVipGuestCanSkipRideAccessLines()
+        
     }
 
     override func didReceiveMemoryWarning() {

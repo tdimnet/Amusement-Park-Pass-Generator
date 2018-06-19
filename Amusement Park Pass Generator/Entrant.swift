@@ -94,94 +94,11 @@ extension EntrantsTypesEnum {
     }
 }
 
-
-// MARK: Area
-enum AreasEnum {
-    case amusementAreas
-    case kitchenAreas
-    case rideControlAreas
-    case maintenanceAreas
-    case officheAreas
-}
-
-extension AreasEnum {
-    var name: String {
-        switch self {
-        case .amusementAreas:
-            return "Amusement Areas"
-        case .kitchenAreas:
-            return "Kitchen Areas"
-        case .rideControlAreas:
-            return "Ride Control Areas"
-        case .maintenanceAreas:
-            return "Maintenance Areas"
-        case .officheAreas:
-            return "Office Areas"
-        }
-    }
-}
-
-extension AreasEnum {
-    var accessLevel: Int {
-        switch self {
-        case .amusementAreas:
-            return 1
-        case .kitchenAreas:
-            return 3
-        case .rideControlAreas:
-            return 4
-        case .maintenanceAreas:
-            return 6
-        case .officheAreas:
-            return 15
-        }
-    }
-}
-
-struct Area {
-    let area: AreasEnum
-    
-    // FIXME: Will need to throw an error later!
-    func isEntrantAllowed(with entrantAccessLevel: Int) -> String {
-        if entrantAccessLevel == EntrantsTypesEnum.rideServicesEmployee.accessLevel && area.accessLevel == AreasEnum.kitchenAreas.accessLevel {
-            return "Access not allowed"
-        } else if entrantAccessLevel >= area.accessLevel {
-            return "Access Granted"
-        }
-        return "Access not allowed"
-    }
-}
-
-enum RideAccessActionsEnum: Int {
-    case accessAllRides = 1
-    case skipAllRideLines = 2
-}
-
-struct RideAccess {
-    func canUserSkipAreaAccessLines(with userAccessLevel: Int, and rideAccessActions: Int) -> String {
-        if (userAccessLevel == RideAccessActionsEnum.skipAllRideLines.rawValue) {
-            return "The user is allowed to skip ride access lines"
-        } else if (userAccessLevel >= RideAccessActionsEnum.accessAllRides.rawValue) {
-            return "The user can access the ride area"
-        }
-        return "The user is cannot to skip ride access lines"
-    }
-}
-
-
-// MARK: Entrant inc. Guest and Employee
-
-enum EntrantErros: Error {
-    case entrantError(reason: String)
-    case nameError(reason: String)
-    case addressError(reason: String)
-}
-
 class Entrant {
     let entrantType: EntrantsTypesEnum
 
     init(entrantType: EntrantsTypesEnum?) throws {
-        guard let entrantType = entrantType else { throw EntrantErros.entrantError(reason: "Entrant Type is missing") }
+        guard let entrantType = entrantType else { throw EntrantErrors.entrantError(reason: "Entrant Type is missing") }
         self.entrantType = entrantType
     }
 
@@ -191,82 +108,5 @@ class Entrant {
 
     func getMerchandiseDiscount() -> Double {
         return entrantType.getMerchandiseDiscount()
-    }
-}
-
-class Guest: Entrant {
-    let dateOfBirth: Date?
-    let firstName: String?
-    let lastName: String?
-    let streetAddress: String?
-    let city: String?
-    let state: String?
-    let zipCode: Int?
-
-    init(entrantType: EntrantsTypesEnum?, dateOfBirth: Date?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) throws {
-        
-        self.dateOfBirth = dateOfBirth
-        self.firstName = firstName
-        self.lastName = lastName
-        self.streetAddress = streetAddress
-        self.city = city
-        self.state = state
-        self.zipCode = zipCode
-        try super.init(entrantType: entrantType)
-        
-        if let date = dateOfBirth, let entrantType = entrantType {
-            if hasUserDateError(dateOfBirth: date, entrantType: entrantType).hasError {
-                let errorMessage = hasUserDateError(dateOfBirth: date, entrantType: entrantType).errorMessage
-                throw EntrantErros.entrantError(reason: errorMessage!)
-            }
-        }
-    }
-    
-    func hasUserDateError(dateOfBirth: Date, entrantType: EntrantsTypesEnum) -> (hasError: Bool, errorMessage: String?) {
-        let currentDate = Date()
-        let currentTimestamp = Date().timeIntervalSince1970
-        let yearInTimestamp: Double = 31556926
-        let fiveYearsInTimestamp: Double = yearInTimestamp * 5
-        let currentTimestampMinusFiveYear: Double = currentTimestamp - fiveYearsInTimestamp
-        let currentDateMinusFiveYear = Date(timeIntervalSince1970: currentTimestampMinusFiveYear)
-        
-        if dateOfBirth > currentDate {
-            let errorMessage = "DateOfBirth is bigger than current Date"
-            let hasError = true
-            return (hasError, errorMessage)
-        } else if currentDateMinusFiveYear > dateOfBirth && entrantType.rawValue == EntrantsTypesEnum.freeChildGuest.rawValue {
-            let errorMessage = "Date of Birth is bigger than 5 years test"
-            let hasError = true
-            return (hasError, errorMessage)
-        }
-        let hasError = false
-        return (hasError, nil)
-    }
-}
-
-class Employee: Entrant {
-    let firstName: String
-    let lastName: String
-    let streetAddress: String
-    let city: String
-    let state: String
-    let zipCode: Int
-
-    init(entrantType: EntrantsTypesEnum?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) throws {
-        guard let firstName = firstName else { throw EntrantErros.nameError(reason: "First Name is missing") }
-        guard let lastName = lastName else { throw EntrantErros.nameError(reason: "Last Name is missing") }
-        
-        guard let streetAddress = streetAddress else { throw EntrantErros.addressError(reason: "Street Address is missing") }
-        guard let city = city else { throw EntrantErros.addressError(reason: "City is missing") }
-        guard let state = state else { throw EntrantErros.addressError(reason: "State is missing") }
-        guard let zipCode = zipCode else { throw EntrantErros.addressError(reason: "Zip code is missing") }
-        
-        self.firstName = firstName
-        self.lastName = lastName
-        self.streetAddress = streetAddress
-        self.city = city
-        self.state = state
-        self.zipCode = zipCode
-        try super.init(entrantType: entrantType)
     }
 }

@@ -11,6 +11,10 @@
 		493329A220D3F48E0050EED6 /* GuestAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493329A120D3F48E0050EED6 /* GuestAreaTests.swift */; };
 		493978A520D2AF0F0080BE0A /* EmployeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A420D2AF0F0080BE0A /* EmployeeTests.swift */; };
 		493978A720D2B6AC0080BE0A /* DiscountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A620D2B6AC0080BE0A /* DiscountTests.swift */; };
+		494D4DE220D9286A00C8876A /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D4DE120D9286A00C8876A /* Area.swift */; };
+		494D4DE420D928DC00C8876A /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D4DE320D928DC00C8876A /* Errors.swift */; };
+		494D4DE620D929CE00C8876A /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D4DE520D929CE00C8876A /* Guest.swift */; };
+		494D4DE820D92A3800C8876A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D4DE720D92A3800C8876A /* Employee.swift */; };
 		496C473620D80096004B83D7 /* EmployeeAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C473520D80096004B83D7 /* EmployeeAreaTests.swift */; };
 		496C473820D80E71004B83D7 /* RideAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C473720D80E71004B83D7 /* RideAccessTests.swift */; };
 		4981F5D520CE7C520092C788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981F5D420CE7C520092C788 /* AppDelegate.swift */; };
@@ -26,6 +30,10 @@
 		493329A120D3F48E0050EED6 /* GuestAreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestAreaTests.swift; sourceTree = "<group>"; };
 		493978A420D2AF0F0080BE0A /* EmployeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTests.swift; sourceTree = "<group>"; };
 		493978A620D2B6AC0080BE0A /* DiscountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountTests.swift; sourceTree = "<group>"; };
+		494D4DE120D9286A00C8876A /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
+		494D4DE320D928DC00C8876A /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		494D4DE520D929CE00C8876A /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
+		494D4DE720D92A3800C8876A /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		496C473520D80096004B83D7 /* EmployeeAreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeAreaTests.swift; sourceTree = "<group>"; };
 		496C473720D80E71004B83D7 /* RideAccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAccessTests.swift; sourceTree = "<group>"; };
 		4981F5D120CE7C520092C788 /* Amusement Park Pass Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amusement Park Pass Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +97,10 @@
 				4981F5DD20CE7C530092C788 /* LaunchScreen.storyboard */,
 				4981F5E020CE7C530092C788 /* Info.plist */,
 				49AD6B6B20CEAD8C004AFC63 /* Entrant.swift */,
+				494D4DE120D9286A00C8876A /* Area.swift */,
+				494D4DE320D928DC00C8876A /* Errors.swift */,
+				494D4DE520D929CE00C8876A /* Guest.swift */,
+				494D4DE720D92A3800C8876A /* Employee.swift */,
 			);
 			path = "Amusement Park Pass Generator";
 			sourceTree = "<group>";
@@ -164,12 +176,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494D4DE220D9286A00C8876A /* Area.swift in Sources */,
 				493329A020D3BC540050EED6 /* GuestTests.swift in Sources */,
+				494D4DE620D929CE00C8876A /* Guest.swift in Sources */,
 				493329A220D3F48E0050EED6 /* GuestAreaTests.swift in Sources */,
 				49AD6B6C20CEAD8C004AFC63 /* Entrant.swift in Sources */,
 				493978A720D2B6AC0080BE0A /* DiscountTests.swift in Sources */,
 				493978A520D2AF0F0080BE0A /* EmployeeTests.swift in Sources */,
 				4981F5D720CE7C520092C788 /* ViewController.swift in Sources */,
+				494D4DE420D928DC00C8876A /* Errors.swift in Sources */,
+				494D4DE820D92A3800C8876A /* Employee.swift in Sources */,
 				496C473820D80E71004B83D7 /* RideAccessTests.swift in Sources */,
 				496C473620D80096004B83D7 /* EmployeeAreaTests.swift in Sources */,
 				4981F5D520CE7C520092C788 /* AppDelegate.swift in Sources */,
