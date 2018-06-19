@@ -18,7 +18,7 @@ class GuestAreaTests {
             let area = Area(area: .amusementAreas)
             
             print("AREA TEST: A classic guest wants to access an amusement area")
-            print(area.isEntrantAllowed(with: guestAccess))
+            print(area.swipePass(with: guestAccess))
         } catch let error {
             print(error)
         }
@@ -31,7 +31,7 @@ class GuestAreaTests {
             let area = Area(area: .kitchenAreas)
             
             print("AREA TEST: A vip guest wants to access a kitchen area")
-            print(area.isEntrantAllowed(with: guestAccess))
+            print(area.swipePass(with: guestAccess))
             
         } catch let error {
             print(error)
@@ -45,7 +45,7 @@ class GuestAreaTests {
             let area = Area(area: .rideControlAreas)
             
             print("AREA TEST: A Free Child guest wants to access a Ride Controll area")
-            print(area.isEntrantAllowed(with: guestAccess))
+            print(area.swipePass(with: guestAccess))
         } catch let error {
             print(error)
         }
@@ -58,7 +58,7 @@ class GuestAreaTests {
             let area = Area(area: .maintenanceAreas)
             
             print("AREA TEST: A Classic guest wants to access a Ride Maintenance area")
-            print(area.isEntrantAllowed(with: guestAccess))
+            print(area.swipePass(with: guestAccess))
         } catch let error {
             print(error)
         }
@@ -71,7 +71,7 @@ class GuestAreaTests {
             let area = Area(area: .officheAreas)
             
             print("AREA TEST: A VIP guest wants to access a Ride Maintenance area")
-            print(area.isEntrantAllowed(with: guestAccess))
+            print(area.swipePass(with: guestAccess))
         } catch let error {
             print(error)
         }

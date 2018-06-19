@@ -51,16 +51,26 @@ extension AreasEnum {
     }
 }
 
-struct Area {
-    let area: AreasEnum
+class Area {
+    var area: AreasEnum
+    
+    init(area: AreasEnum) {
+        self.area = area
+    }
     
     // FIXME: Will need to throw an error later!
-    func isEntrantAllowed(with entrantAccessLevel: Int) -> String {
+    func swipePass(with entrantAccessLevel: Int) -> String {
         if entrantAccessLevel == EntrantsTypesEnum.rideServicesEmployee.accessLevel && area.accessLevel == AreasEnum.kitchenAreas.accessLevel {
             return "Access not allowed"
         } else if entrantAccessLevel >= area.accessLevel {
             return "Access Granted"
         }
         return "Access not allowed"
+    }
+}
+
+class AmusementArea: Area {
+    override init(area: AreasEnum) {
+        super.init(area: area)
     }
 }
