@@ -56,6 +56,8 @@ class ViewController: UIViewController {
         GuestAreaTests.isEntrantFreeChildGuestInRideControllAreasAllowed()
         GuestAreaTests.isEntrantClassicGuestInMaintenanceAreasAllowed()
         GuestAreaTests.isVIPGuestInOfficeAreasAllowed()
+        GuestAreaTests.hasClassicGuestBirthDateMessage()
+        GuestAreaTests.hasClassicGuestNoBirthDateMessage()
         
         print("\n")
         

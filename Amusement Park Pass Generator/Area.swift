@@ -73,4 +73,19 @@ class AmusementArea: Area {
     override init(area: AreasEnum) {
         super.init(area: area)
     }
+    
+    func swipePass(with entrant: Guest) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let currentDate = dateFormatter.string(from: Date())
+        
+        if let birthDate = entrant.dateOfBirth {
+            let birthDateFormatted = dateFormatter.string(from: birthDate)
+            if currentDate == birthDateFormatted {
+                return "Happy Birthday! Access Allowed"
+            }
+            return "Access Allowed"
+        }
+        return "Access Allowed"
+    }
 }
