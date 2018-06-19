@@ -8,36 +8,42 @@
 
 import Foundation
 
-class RideAccessTests {
-    static func isClassicGuestCanSkipRideAccessLines() {
+class RideLinesTests {
+    static func isClassicUserCanSkipRideLines() {
         do {
             let guest = try Guest(entrantType: .classicGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
-            let guestRideAccessLevel = guest.entrantType.rideAccessLevel
-            let rideAccess = RideAccess()
-            
-            print("RIDE ACCESS TEST: A Classic Guest to access a ride")
-            print(rideAccess.canUserSkipAreaAccessLines(with: guestRideAccessLevel, and: RideAccessActionsEnum.accessAllRides.rawValue))
-            
-            print("RIDE ACCESS TEST: A Classic Guest wants skip rides lines")
-            print(rideAccess.canUserSkipAreaAccessLines(with: guestRideAccessLevel, and: RideAccessActionsEnum.skipAllRideLines.rawValue))
-            
+            print("RIDE LINES TEST: A Classic Guest wants to skip ride lines")
+            print(guest.canEntrantSkipRideLines(entrant: guest).message)
         } catch let error {
             print(error)
         }
     }
     
-    static func isVipGuestCanSkipRideAccessLines() {
+    static func isVipUserCanSkipRideLines() {
         do {
             let guest = try Guest(entrantType: .vipGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
-            let guestRideAccessLevel = guest.entrantType.rideAccessLevel
-            let rideAccess = RideAccess()
-            
-            print("RIDE ACCESS TEST: A VIP Guest to access a ride")
-            print(rideAccess.canUserSkipAreaAccessLines(with: guestRideAccessLevel, and: RideAccessActionsEnum.accessAllRides.rawValue))
-            
-            print("RIDE ACCESS TEST: A VIP Guest wants skip rides lines")
-            print(rideAccess.canUserSkipAreaAccessLines(with: guestRideAccessLevel, and: RideAccessActionsEnum.skipAllRideLines.rawValue))
-            
+            print("RIDE LINES TEST: A VIP Guest wants to skip ride lines")
+            print(guest.canEntrantSkipRideLines(entrant: guest).message)
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    static func isFoodServiceEmployeeCanSkipRideLines() {
+        do {
+            let employe = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: 12345)
+            print("RIDE LINES TEST: A Food Service Employee wants to skip ride lines")
+            print(employe.canEntrantSkipRideLines(entrant: employe).message)
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    static func isManagerEmployeeCanSkipRideLines() {
+        do {
+            let employe = try Employee(entrantType: .managerEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: 12345)
+            print("RIDE LINES TEST: A Manager Employee wants to skip ride lines")
+            print(employe.canEntrantSkipRideLines(entrant: employe).message)
         } catch let error {
             print(error)
         }

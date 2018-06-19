@@ -18,7 +18,7 @@ class GuestAreaTests {
             let area = Area(area: .amusementAreas)
             
             print("AREA TEST: A classic guest wants to access an amusement area")
-            print(area.isEntrantAllowed(with: guestAccess))
+            print(area.swipePass(with: guestAccess))
         } catch let error {
             print(error)
         }
@@ -31,7 +31,7 @@ class GuestAreaTests {
             let area = Area(area: .kitchenAreas)
             
             print("AREA TEST: A vip guest wants to access a kitchen area")
-            print(area.isEntrantAllowed(with: guestAccess))
+            print(area.swipePass(with: guestAccess))
             
         } catch let error {
             print(error)
@@ -45,7 +45,7 @@ class GuestAreaTests {
             let area = Area(area: .rideControlAreas)
             
             print("AREA TEST: A Free Child guest wants to access a Ride Controll area")
-            print(area.isEntrantAllowed(with: guestAccess))
+            print(area.swipePass(with: guestAccess))
         } catch let error {
             print(error)
         }
@@ -58,7 +58,7 @@ class GuestAreaTests {
             let area = Area(area: .maintenanceAreas)
             
             print("AREA TEST: A Classic guest wants to access a Ride Maintenance area")
-            print(area.isEntrantAllowed(with: guestAccess))
+            print(area.swipePass(with: guestAccess))
         } catch let error {
             print(error)
         }
@@ -71,7 +71,34 @@ class GuestAreaTests {
             let area = Area(area: .officheAreas)
             
             print("AREA TEST: A VIP guest wants to access a Ride Maintenance area")
-            print(area.isEntrantAllowed(with: guestAccess))
+            print(area.swipePass(with: guestAccess))
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    static func hasClassicGuestBirthDateMessage() {
+        do {
+            let guest = try Guest(entrantType: .classicGuest, dateOfBirth: Date(), firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
+            let area = AmusementArea(area: .amusementAreas)
+            
+            print("AREA TEST: A Classic guest wants to access a Amusement area and it is his birthday")
+            print(area.swipePass(with: guest))
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    static func hasClassicGuestNoBirthDateMessage() {
+        do {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let guestDateOfBirth = formatter.date(from: "2010/02/02")
+            let guest = try Guest(entrantType: .classicGuest, dateOfBirth: guestDateOfBirth, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
+            let area = AmusementArea(area: .amusementAreas)
+            
+            print("AREA TEST: A Classic guest wants to access a Amusement area and it is not his birthday")
+            print(area.swipePass(with: guest))
         } catch let error {
             print(error)
         }

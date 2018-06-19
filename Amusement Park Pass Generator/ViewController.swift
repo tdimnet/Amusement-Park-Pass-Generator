@@ -45,6 +45,7 @@ class ViewController: UIViewController {
         EmployeeTests.isEmployeeAddressMissing()
         EmployeeTests.isEmployeeStateMissing()
         EmployeeTests.isEmployeeZipcodeMissing()
+        EmployeeTests.isEmployeeBirthDateHasError()
         
         print("\n")
         
@@ -55,6 +56,8 @@ class ViewController: UIViewController {
         GuestAreaTests.isEntrantFreeChildGuestInRideControllAreasAllowed()
         GuestAreaTests.isEntrantClassicGuestInMaintenanceAreasAllowed()
         GuestAreaTests.isVIPGuestInOfficeAreasAllowed()
+        GuestAreaTests.hasClassicGuestBirthDateMessage()
+        GuestAreaTests.hasClassicGuestNoBirthDateMessage()
         
         print("\n")
         
@@ -72,9 +75,11 @@ class ViewController: UIViewController {
         print("\n")
         
         // Ride Access Tests
-        print("Ride Access")
-        RideAccessTests.isClassicGuestCanSkipRideAccessLines()
-        RideAccessTests.isVipGuestCanSkipRideAccessLines()
+        print("SKIP RIDE LINES")
+        RideLinesTests.isClassicUserCanSkipRideLines()
+        RideLinesTests.isVipUserCanSkipRideLines()
+        RideLinesTests.isFoodServiceEmployeeCanSkipRideLines()
+        RideLinesTests.isManagerEmployeeCanSkipRideLines()
     }
 
     override func didReceiveMemoryWarning() {
