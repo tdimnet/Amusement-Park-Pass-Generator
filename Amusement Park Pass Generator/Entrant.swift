@@ -215,8 +215,8 @@ class Guest: Entrant {
         try super.init(entrantType: entrantType)
         
         if let date = dateOfBirth, let entrantType = entrantType {
-            if hasUserDateError(dateOfBirth: date, entrantType: entrantType).0 {
-                let errorMessage = hasUserDateError(dateOfBirth: date, entrantType: entrantType).1
+            if hasUserDateError(dateOfBirth: date, entrantType: entrantType).hasError {
+                let errorMessage = hasUserDateError(dateOfBirth: date, entrantType: entrantType).errorMessage
                 throw EntrantErros.entrantError(reason: errorMessage!)
             }
         }

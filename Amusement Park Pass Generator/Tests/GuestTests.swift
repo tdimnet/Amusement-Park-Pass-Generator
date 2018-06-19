@@ -42,29 +42,29 @@ class GuestTests {
         }
     }
     
-//    static func shouldFreeChildGuestHaveBirthDateError() {
-//        do {
-//            let formatter = DateFormatter()
-//            formatter.dateFormat = "yyyy/MM/dd"
-//            let guestDateOfBirth = formatter.date(from: "2010/02/02")
-//            let guest = try Guest(entrantType: .classicGuest, dateOfBirth: guestDateOfBirth, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
-//            print("ENTRANT GUEST TEST: OK: The Free Child Guest information are correct")
-//        } catch let error {
-//            print(error)
-//            print("ENTRANT GUEST TEST: ERROR: The Free Child Guest is too old")
-//        }
-//    }
+    static func shouldFreeChildGuestHaveBirthDateError() {
+        do {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let guestDateOfBirth = formatter.date(from: "2010/02/02")
+            let guest = try Guest(entrantType: .freeChildGuest, dateOfBirth: guestDateOfBirth, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
+            print("ENTRANT GUEST TEST: OK: The Free Child Guest information are correct")
+        } catch let error {
+            print(error)
+            print("ENTRANT GUEST TEST: ERROR: The Free Child Guest is too old")
+        }
+    }
 //
-//    static func shouldClassicGuestHaveBirthDateError() {
-//        do {
-//            let formatter = DateFormatter()
-//            formatter.dateFormat = "yyyy/MM/dd"
-//            let guestDateOfBirth = formatter.date(from: "2010/02/02")
-//            let guest = try Guest(entrantType: .classicGuest, dateOfBirth: guestDateOfBirth, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
-//            print("ENTRANT GUEST TEST: OK: The Classic Guest information are correct")
-//        } catch let error {
-//            print(error)
-//            print("ENTRANT GUEST TEST: ERROR: The Classic Guest information are not correct")
-//        }
-//    }
+    static func shouldClassicGuestHaveBirthDateError() {
+        do {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let guestDateOfBirth = formatter.date(from: "2020/02/02")
+            let guest = try Guest(entrantType: .classicGuest, dateOfBirth: guestDateOfBirth, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
+            print("ENTRANT GUEST TEST: OK: The Classic Guest information are correct")
+        } catch let error {
+            print(error)
+            print("ENTRANT GUEST TEST: ERROR: The Classic Guest Date Of Birth is not correct")
+        }
+    }
 }

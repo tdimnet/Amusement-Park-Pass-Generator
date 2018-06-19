@@ -33,8 +33,8 @@ class ViewController: UIViewController {
         GuestTests.isGuestEntrantTypeMissing()
         GuestTests.isGuestEntrantNeedRequiredInfo()
         GuestTests.shouldFreeChildGuestNotHaveBirthDateError()
-//        GuestTests.shouldFreeChildGuestHaveBirthDateError()
-//        GuestTests.shouldClassicGuestHaveBirthDateError()
+        GuestTests.shouldFreeChildGuestHaveBirthDateError()
+        GuestTests.shouldClassicGuestHaveBirthDateError()
         
         print("\n")
         
