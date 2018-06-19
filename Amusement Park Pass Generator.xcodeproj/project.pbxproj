@@ -12,6 +12,7 @@
 		493978A520D2AF0F0080BE0A /* EmployeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A420D2AF0F0080BE0A /* EmployeeTests.swift */; };
 		493978A720D2B6AC0080BE0A /* DiscountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A620D2B6AC0080BE0A /* DiscountTests.swift */; };
 		496C473620D80096004B83D7 /* EmployeeAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C473520D80096004B83D7 /* EmployeeAreaTests.swift */; };
+		496C473820D80E71004B83D7 /* RideAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C473720D80E71004B83D7 /* RideAccessTests.swift */; };
 		4981F5D520CE7C520092C788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981F5D420CE7C520092C788 /* AppDelegate.swift */; };
 		4981F5D720CE7C520092C788 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981F5D620CE7C520092C788 /* ViewController.swift */; };
 		4981F5DA20CE7C520092C788 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4981F5D820CE7C520092C788 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		493978A420D2AF0F0080BE0A /* EmployeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTests.swift; sourceTree = "<group>"; };
 		493978A620D2B6AC0080BE0A /* DiscountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountTests.swift; sourceTree = "<group>"; };
 		496C473520D80096004B83D7 /* EmployeeAreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeAreaTests.swift; sourceTree = "<group>"; };
+		496C473720D80E71004B83D7 /* RideAccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAccessTests.swift; sourceTree = "<group>"; };
 		4981F5D120CE7C520092C788 /* Amusement Park Pass Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amusement Park Pass Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4981F5D420CE7C520092C788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4981F5D620CE7C520092C788 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				4933299F20D3BC540050EED6 /* GuestTests.swift */,
 				493329A120D3F48E0050EED6 /* GuestAreaTests.swift */,
 				496C473520D80096004B83D7 /* EmployeeAreaTests.swift */,
+				496C473720D80E71004B83D7 /* RideAccessTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				493978A720D2B6AC0080BE0A /* DiscountTests.swift in Sources */,
 				493978A520D2AF0F0080BE0A /* EmployeeTests.swift in Sources */,
 				4981F5D720CE7C520092C788 /* ViewController.swift in Sources */,
+				496C473820D80E71004B83D7 /* RideAccessTests.swift in Sources */,
 				496C473620D80096004B83D7 /* EmployeeAreaTests.swift in Sources */,
 				4981F5D520CE7C520092C788 /* AppDelegate.swift in Sources */,
 			);

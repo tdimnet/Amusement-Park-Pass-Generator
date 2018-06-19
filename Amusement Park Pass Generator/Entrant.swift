@@ -58,6 +58,17 @@ extension EntrantsTypesEnum {
 }
 
 extension EntrantsTypesEnum {
+    var rideAccessLevel: Int {
+        switch self {
+        case .vipGuest:
+            return 2
+        default:
+            return 1
+        }
+    }
+}
+
+extension EntrantsTypesEnum {
     func getFoodDiscount() -> Double {
         switch self {
         case .vipGuest:
@@ -141,6 +152,22 @@ struct Area {
     }
 }
 
+enum RideAccessActionsEnum: Int {
+    case accessAllRides = 1
+    case skipAllRideLines = 2
+}
+
+struct RideAccess {
+    func canUserSkipAreaAccessLines(with userAccessLevel: Int, and rideAccessActions: Int) -> String {
+        if (userAccessLevel == RideAccessActionsEnum.skipAllRideLines.rawValue) {
+            return "The user is allowed to skip ride access lines"
+        } else if (userAccessLevel >= RideAccessActionsEnum.accessAllRides.rawValue) {
+            return "The user can access the ride area"
+        }
+        return "The user is cannot to skip ride access lines"
+    }
+}
+
 
 // MARK: Entrant inc. Guest and Employee
 
@@ -177,6 +204,7 @@ class Guest: Entrant {
     let zipCode: Int?
 
     init(entrantType: EntrantsTypesEnum?, dateOfBirth: Date?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: Int?) throws {
+        
         self.dateOfBirth = dateOfBirth
         self.firstName = firstName
         self.lastName = lastName
@@ -185,15 +213,34 @@ class Guest: Entrant {
         self.state = state
         self.zipCode = zipCode
         try super.init(entrantType: entrantType)
+        
+        if let date = dateOfBirth, let entrantType = entrantType {
+            if hasUserDateError(dateOfBirth: date, entrantType: entrantType).hasError {
+                let errorMessage = hasUserDateError(dateOfBirth: date, entrantType: entrantType).errorMessage
+                throw EntrantErros.entrantError(reason: errorMessage!)
+            }
+        }
     }
     
-    func isUserTooOld(dateOfBirth: Date) -> Bool {
+    func hasUserDateError(dateOfBirth: Date, entrantType: EntrantsTypesEnum) -> (hasError: Bool, errorMessage: String?) {
         let currentDate = Date()
+        let currentTimestamp = Date().timeIntervalSince1970
+        let yearInTimestamp: Double = 31556926
+        let fiveYearsInTimestamp: Double = yearInTimestamp * 5
+        let currentTimestampMinusFiveYear: Double = currentTimestamp - fiveYearsInTimestamp
+        let currentDateMinusFiveYear = Date(timeIntervalSince1970: currentTimestampMinusFiveYear)
         
-        if currentDate > dateOfBirth {
-            return false
+        if dateOfBirth > currentDate {
+            let errorMessage = "DateOfBirth is bigger than current Date"
+            let hasError = true
+            return (hasError, errorMessage)
+        } else if currentDateMinusFiveYear > dateOfBirth && entrantType.rawValue == EntrantsTypesEnum.freeChildGuest.rawValue {
+            let errorMessage = "Date of Birth is bigger than 5 years test"
+            let hasError = true
+            return (hasError, errorMessage)
         }
-        return true
+        let hasError = false
+        return (hasError, nil)
     }
 }
 

@@ -32,6 +32,9 @@ class ViewController: UIViewController {
         print("GUEST TESTS")
         GuestTests.isGuestEntrantTypeMissing()
         GuestTests.isGuestEntrantNeedRequiredInfo()
+        GuestTests.shouldFreeChildGuestNotHaveBirthDateError()
+        GuestTests.shouldFreeChildGuestHaveBirthDateError()
+        GuestTests.shouldClassicGuestHaveBirthDateError()
         
         print("\n")
         
@@ -65,6 +68,13 @@ class ViewController: UIViewController {
         EmployeeAreaTest.isMaintenanceEmployeeInOfficeAreasAllowed()
         EmployeeAreaTest.isManagerEmployeeInOfficeAreasAllowed()
         EmployeeAreaTest.isManagerEmployeeInMaintenanceAreasAllowed()
+        
+        print("\n")
+        
+        // Ride Access Tests
+        print("Ride Access")
+        RideAccessTests.isClassicGuestCanSkipRideAccessLines()
+        RideAccessTests.isVipGuestCanSkipRideAccessLines()
     }
 
     override func didReceiveMemoryWarning() {
