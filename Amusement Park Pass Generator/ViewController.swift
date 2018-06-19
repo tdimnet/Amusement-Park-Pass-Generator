@@ -45,6 +45,7 @@ class ViewController: UIViewController {
         EmployeeTests.isEmployeeAddressMissing()
         EmployeeTests.isEmployeeStateMissing()
         EmployeeTests.isEmployeeZipcodeMissing()
+        EmployeeTests.isEmployeeBirthDateHasError()
         
         print("\n")
         

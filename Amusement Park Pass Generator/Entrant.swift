@@ -94,7 +94,14 @@ extension EntrantsTypesEnum {
     }
 }
 
-class Entrant {
+protocol EntrantProtocol {
+    var entrantType: EntrantsTypesEnum { get }
+    
+    func getFoodDiscount() -> Double
+    func getMerchandiseDiscount() -> Double
+}
+
+class Entrant: EntrantProtocol {
     let entrantType: EntrantsTypesEnum
 
     init(entrantType: EntrantsTypesEnum?) throws {

@@ -8,8 +8,9 @@
 
 import Foundation
 
-class Guest: Entrant {
-    let dateOfBirth: Date?
+class Guest: Entrant, birthDateProtocol {
+    var dateOfBirth: Date?
+    
     let firstName: String?
     let lastName: String?
     let streetAddress: String?
@@ -29,14 +30,14 @@ class Guest: Entrant {
         try super.init(entrantType: entrantType)
         
         if let date = dateOfBirth, let entrantType = entrantType {
-            if hasUserDateError(dateOfBirth: date, entrantType: entrantType).hasError {
-                let errorMessage = hasUserDateError(dateOfBirth: date, entrantType: entrantType).errorMessage
+            if hasUserBirthDateError(dateOfBirth: date, entrantType: entrantType).hasError {
+                let errorMessage = hasUserBirthDateError(dateOfBirth: date, entrantType: entrantType).errorMessage
                 throw EntrantErrors.entrantError(reason: errorMessage!)
             }
         }
     }
     
-    func hasUserDateError(dateOfBirth: Date, entrantType: EntrantsTypesEnum) -> (hasError: Bool, errorMessage: String?) {
+    func hasUserBirthDateError(dateOfBirth: Date, entrantType: EntrantsTypesEnum) -> (hasError: Bool, errorMessage: String?) {
         let currentDate = Date()
         let currentTimestamp = Date().timeIntervalSince1970
         let yearInTimestamp: Double = 31556926

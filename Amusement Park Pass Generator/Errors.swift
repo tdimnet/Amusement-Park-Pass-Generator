@@ -13,3 +13,10 @@ enum EntrantErrors: Error {
     case nameError(reason: String)
     case addressError(reason: String)
 }
+
+// There is a polymorphic code for this protocol (implemented in both Guest and Employee)
+protocol birthDateProtocol {
+    var dateOfBirth: Date? { get set }
+    
+    func hasUserBirthDateError(dateOfBirth: Date, entrantType: EntrantsTypesEnum) -> (hasError: Bool, errorMessage: String?)
+}
