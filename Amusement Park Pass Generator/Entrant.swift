@@ -214,12 +214,15 @@ class Guest: Entrant {
         self.zipCode = zipCode
         try super.init(entrantType: entrantType)
         
-        if let date = dateOfBirth {
-            isUserTooOld(dateOfBirth: date)
+        if let date = dateOfBirth, let entrantType = entrantType {
+            if hasUserDateError(dateOfBirth: date, entrantType: entrantType).0 {
+                let errorMessage = hasUserDateError(dateOfBirth: date, entrantType: entrantType).1
+                throw EntrantErros.entrantError(reason: errorMessage!)
+            }
         }
     }
     
-    func isUserTooOld(dateOfBirth: Date) {
+    func hasUserDateError(dateOfBirth: Date, entrantType: EntrantsTypesEnum) -> (hasError: Bool, errorMessage: String?) {
         let currentDate = Date()
         let currentTimestamp = Date().timeIntervalSince1970
         let yearInTimestamp: Double = 31556926
@@ -228,16 +231,16 @@ class Guest: Entrant {
         let currentDateMinusFiveYear = Date(timeIntervalSince1970: currentTimestampMinusFiveYear)
         
         if dateOfBirth > currentDate {
-            print("DateOfBirth is bigger than current Date")
-        } else if currentDateMinusFiveYear > dateOfBirth {
-            print("Date of Birth is bigger than 5 years test")
-        } else {
-            print("Date of birth has no error")
+            let errorMessage = "DateOfBirth is bigger than current Date"
+            let hasError = true
+            return (hasError, errorMessage)
+        } else if currentDateMinusFiveYear > dateOfBirth && entrantType.rawValue == EntrantsTypesEnum.freeChildGuest.rawValue {
+            let errorMessage = "Date of Birth is bigger than 5 years test"
+            let hasError = true
+            return (hasError, errorMessage)
         }
-        
-        print(currentDate)
-        print(currentDateMinusFiveYear)
-        print(dateOfBirth)
+        let hasError = false
+        return (hasError, nil)
     }
 }
 
