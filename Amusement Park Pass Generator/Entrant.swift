@@ -221,14 +221,22 @@ class Guest: Entrant {
     
     func isUserTooOld(dateOfBirth: Date) {
         let currentDate = Date()
-        let currentDateInTimeStamp = Date().timeIntervalSince1970
-        let yearInTimeStamp: Double = 31556926
-        let fiveYearsInTimeStamp: Double = yearInTimeStamp * 5
-        let fiveYearsCurrentDate: Double = currentDateInTimeStamp - fiveYearsInTimeStamp
-        let fiveYears = Date(timeIntervalSince1970: fiveYearsCurrentDate)
+        let currentTimestamp = Date().timeIntervalSince1970
+        let yearInTimestamp: Double = 31556926
+        let fiveYearsInTimestamp: Double = yearInTimestamp * 5
+        let currentTimestampMinusFiveYear: Double = currentTimestamp - fiveYearsInTimestamp
+        let currentDateMinusFiveYear = Date(timeIntervalSince1970: currentTimestampMinusFiveYear)
+        
+        if dateOfBirth > currentDate {
+            print("DateOfBirth is bigger than current Date")
+        } else if currentDateMinusFiveYear > dateOfBirth {
+            print("Date of Birth is bigger than 5 years test")
+        } else {
+            print("Date of birth has no error")
+        }
         
         print(currentDate)
-        print(fiveYears)
+        print(currentDateMinusFiveYear)
         print(dateOfBirth)
     }
 }
