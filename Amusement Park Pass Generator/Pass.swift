@@ -8,11 +8,24 @@
 
 import Foundation
 
-struct Pass {
-    let entrant: Entrant
+protocol Pass {
+    var swipeTime: Date? { get set }
+}
+
+struct GuestPass: Pass {
+    let entrant: Guest
     var swipeTime: Date? = nil
     
-    init(entrant: Entrant) {
+    init(entrant: Guest) {
+        self.entrant = entrant
+    }
+}
+
+struct EmployeePass: Pass {
+    let entrant: Employee
+    var swipeTime: Date? = nil
+    
+    init(entrant: Employee) {
         self.entrant = entrant
     }
 }
