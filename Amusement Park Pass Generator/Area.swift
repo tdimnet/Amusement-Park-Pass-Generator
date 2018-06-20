@@ -119,14 +119,29 @@ class Area {
     }
 }
 
-// For Amusement Area, I decided to not implement the "swipe twice in a row" since it is working above and Amusement Areas are open to the public.
+// Amusement Area class implements both polymorphic code and the birthday test case. For simplicity I decided to display a custom birthday message only for the guests (and not the employee).
 class AmusementArea: Area {
     
     override init(area: AreasEnum) {
         super.init(area: area)
     }
     
-    func swipePass(with pass: GuestPass) -> String {
+    // Here we are overriding code for the guestSwipePass method only and we implement a custom birthday message.
+    override func guestSwipePass(fromPass pass: inout GuestPass) -> String {
+        if pass.entrant.entrantType.accessLevel >= area.accessLevel {
+            if isAbleToSwipe(fromPass: &pass) {
+                if isGuestBirthDay(with: pass) {
+                    return "Happy Birthday! Access Allowed"
+                }
+                return "Access Granted"
+            }
+            return "Not able to swipe twice in a row"
+        }
+        return "Access not allowed"
+    }
+    
+    // Check if the current date if the Guest Birthday
+    func isGuestBirthDay(with pass: GuestPass) -> Bool {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let currentDate = dateFormatter.string(from: Date())
@@ -134,10 +149,9 @@ class AmusementArea: Area {
         if let birthDate = pass.entrant.dateOfBirth {
             let birthDateFormatted = dateFormatter.string(from: birthDate)
             if currentDate == birthDateFormatted {
-                return "Happy Birthday! Access Allowed"
+                return true
             }
-            return "Access Allowed"
         }
-        return "Access Allowed"
+        return false
     }
 }

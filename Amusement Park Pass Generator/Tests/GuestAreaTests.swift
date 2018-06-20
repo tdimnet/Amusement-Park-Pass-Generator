@@ -90,12 +90,12 @@ class GuestAreaTests {
     static func hasClassicGuestBirthDateMessage() {
         do {
             let guest = try Guest(entrantType: .classicGuest, dateOfBirth: Date(), firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
-            let pass = GuestPass(entrant: guest)
+            var pass = GuestPass(entrant: guest)
             
             let area = AmusementArea(area: .amusementAreas)
             
             print("AREA TEST: A Classic guest wants to access a Amusement area and it is his birthday")
-            print(area.swipePass(with: pass))
+            print(area.guestSwipePass(fromPass: &pass))
         } catch let error {
             print(error)
         }
@@ -108,12 +108,12 @@ class GuestAreaTests {
             formatter.dateFormat = "yyyy/MM/dd"
             let guestDateOfBirth = formatter.date(from: "2010/02/02")
             let guest = try Guest(entrantType: .classicGuest, dateOfBirth: guestDateOfBirth, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
-            let pass = GuestPass(entrant: guest)
+            var pass = GuestPass(entrant: guest)
             
             let area = AmusementArea(area: .amusementAreas)
             
             print("AREA TEST: A Classic guest wants to access a Amusement area and it is not his birthday")
-            print(area.swipePass(with: pass))
+            print(area.guestSwipePass(fromPass: &pass))
         } catch let error {
             print(error)
         }
