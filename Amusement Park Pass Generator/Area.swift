@@ -59,10 +59,35 @@ class Area {
         self.area = area
     }
     
-    func swipePass(with entrantAccessLevel: Int) -> String {
-        if entrantAccessLevel == EntrantsTypesEnum.rideServicesEmployee.accessLevel && area.accessLevel == AreasEnum.kitchenAreas.accessLevel {
+    func guestSwipePass(fromPass pass: GuestPass) -> String {
+        if pass.entrant.entrantType.accessLevel >= area.accessLevel {
+            return "Access Granted"
+        }
+        return "Access not allowed"
+    }
+    
+    func isAbleToSwipe(fromPass pass: inout GuestPass) -> Bool {
+        if pass.swipeTime == nil {
+            pass.swipeTime = Date()
+            return true
+        }
+        let calendar = Calendar.current
+        let unitFlags = Set<Calendar.Component>([ .second ])
+        let dateComponents = calendar.dateComponents(unitFlags, from: pass.swipeTime!, to: Date())
+        let seconds = dateComponents.second
+        if let seconds = seconds {
+            if seconds < swipeTimer {
+                return false
+            }
+        }
+        return true
+    }
+    
+    
+    func employeeSwipePass(fromPass pass: EmployeePass) -> String {
+        if pass.entrant.entrantType.accessLevel == EntrantsTypesEnum.rideServicesEmployee.accessLevel && area.accessLevel == AreasEnum.kitchenAreas.accessLevel {
             return "Access not allowed"
-        } else if entrantAccessLevel >= area.accessLevel {
+        } else if pass.entrant.entrantType.accessLevel >= area.accessLevel {
             return "Access Granted"
         }
         return "Access not allowed"
