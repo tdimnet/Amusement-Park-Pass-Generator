@@ -63,17 +63,4 @@ class EmployeeTests {
             print("ENTRANT EMPLOYEE TEST: An error occurs! Employee should have a Zip Code!")
         }
     }
-    
-    static func isEmployeeBirthDateHasError() {
-        do {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy/MM/dd"
-            let guestDateOfBirth = formatter.date(from: "2020/02/02")
-            let employee = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: guestDateOfBirth, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: 12345)
-            print("ENTRANT EMPLOYEE TEST: OK: The employe has all the information needed")
-        } catch let error {
-            print(error)
-            print("ENTRANT EMPLOYEE TEST: An error occurs! Employee Birth Date invalid!")
-        }
-    }
 }

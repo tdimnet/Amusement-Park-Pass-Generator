@@ -8,7 +8,6 @@
 
 import Foundation
 
-// MARK: Area
 enum AreasEnum {
     case amusementAreas
     case kitchenAreas
@@ -53,38 +52,106 @@ extension AreasEnum {
 
 class Area {
     var area: AreasEnum
+    let swipeTimer = 5
     
     init(area: AreasEnum) {
         self.area = area
     }
     
-    func swipePass(with entrantAccessLevel: Int) -> String {
-        if entrantAccessLevel == EntrantsTypesEnum.rideServicesEmployee.accessLevel && area.accessLevel == AreasEnum.kitchenAreas.accessLevel {
-            return "Access not allowed"
-        } else if entrantAccessLevel >= area.accessLevel {
-            return "Access Granted"
+    // Swipe Pass for guests
+    func guestSwipePass(fromPass pass: inout GuestPass) -> String {
+        if pass.entrant.entrantType.accessLevel >= area.accessLevel {
+            if isAbleToSwipe(fromPass: &pass) {
+                return "Access Granted"
+            }
+            return "Not able to swipe twice in a row"
         }
         return "Access not allowed"
     }
+    
+    // Can a guest swipe twice in a row
+    func isAbleToSwipe(fromPass pass: inout GuestPass) -> Bool {
+        if pass.swipeTime == nil {
+            pass.swipeTime = Date()
+            return true
+        }
+        let calendar = Calendar.current
+        let unitFlags = Set<Calendar.Component>([ .second ])
+        let dateComponents = calendar.dateComponents(unitFlags, from: pass.swipeTime!, to: Date())
+        let seconds = dateComponents.second
+        if let seconds = seconds {
+            if seconds < swipeTimer {
+                return false
+            }
+        }
+        return true
+    }
+    
+    // Swipe pass for employees
+    func employeeSwipePass(fromPass pass: inout EmployeePass) -> String {
+        if pass.entrant.entrantType.accessLevel == EntrantsTypesEnum.rideServicesEmployee.accessLevel && area.accessLevel == AreasEnum.kitchenAreas.accessLevel {
+            return "Access not allowed"
+        } else if pass.entrant.entrantType.accessLevel >= area.accessLevel {
+            if isAbleToSwipe(fromPass: &pass) {
+                return "Access Granted"
+            }
+            return "Not able to swipe twice in a row"
+        }
+        return "Access not allowed"
+    }
+    
+    // Can an employee swipe twice in a row
+    func isAbleToSwipe(fromPass pass: inout EmployeePass) -> Bool {
+        if pass.swipeTime == nil {
+            pass.swipeTime = Date()
+            return true
+        }
+        let calendar = Calendar.current
+        let unitFlags = Set<Calendar.Component>([ .second ])
+        let dateComponents = calendar.dateComponents(unitFlags, from: pass.swipeTime!, to: Date())
+        let seconds = dateComponents.second
+        if let seconds = seconds {
+            if seconds < swipeTimer {
+                return false
+            }
+        }
+        return true
+    }
 }
 
+// Amusement Area class implements both polymorphic code and the birthday test case. For simplicity I decided to display a custom birthday message only for the guests (and not the employee).
 class AmusementArea: Area {
+    
     override init(area: AreasEnum) {
         super.init(area: area)
     }
     
-    func swipePass(with entrant: Guest) -> String {
+    // Here we are overriding code for the guestSwipePass method only and we implement a custom birthday message.
+    override func guestSwipePass(fromPass pass: inout GuestPass) -> String {
+        if pass.entrant.entrantType.accessLevel >= area.accessLevel {
+            if isAbleToSwipe(fromPass: &pass) {
+                if isGuestBirthDay(with: pass) {
+                    return "Happy Birthday! Access Allowed"
+                }
+                return "Access Granted"
+            }
+            return "Not able to swipe twice in a row"
+        }
+        return "Access not allowed"
+    }
+    
+    // Check if the current date if the Guest Birthday
+    func isGuestBirthDay(with pass: GuestPass) -> Bool {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let currentDate = dateFormatter.string(from: Date())
         
-        if let birthDate = entrant.dateOfBirth {
+        if let birthDate = pass.entrant.dateOfBirth {
             let birthDateFormatted = dateFormatter.string(from: birthDate)
             if currentDate == birthDateFormatted {
-                return "Happy Birthday! Access Allowed"
+                return true
             }
-            return "Access Allowed"
         }
-        return "Access Allowed"
+        return false
     }
 }

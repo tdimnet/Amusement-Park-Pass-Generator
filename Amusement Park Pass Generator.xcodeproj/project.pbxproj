@@ -23,6 +23,7 @@
 		4981F5DC20CE7C530092C788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4981F5DB20CE7C530092C788 /* Assets.xcassets */; };
 		4981F5DF20CE7C530092C788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4981F5DD20CE7C530092C788 /* LaunchScreen.storyboard */; };
 		49AD6B6C20CEAD8C004AFC63 /* Entrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD6B6B20CEAD8C004AFC63 /* Entrant.swift */; };
+		49F2E46020DA423F00A8CC97 /* Pass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2E45F20DA423F00A8CC97 /* Pass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4981F5DE20CE7C530092C788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4981F5E020CE7C530092C788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49AD6B6B20CEAD8C004AFC63 /* Entrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrant.swift; sourceTree = "<group>"; };
+		49F2E45F20DA423F00A8CC97 /* Pass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				494D4DE320D928DC00C8876A /* Errors.swift */,
 				494D4DE520D929CE00C8876A /* Guest.swift */,
 				494D4DE720D92A3800C8876A /* Employee.swift */,
+				49F2E45F20DA423F00A8CC97 /* Pass.swift */,
 			);
 			path = "Amusement Park Pass Generator";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				493329A020D3BC540050EED6 /* GuestTests.swift in Sources */,
 				494D4DE620D929CE00C8876A /* Guest.swift in Sources */,
 				493329A220D3F48E0050EED6 /* GuestAreaTests.swift in Sources */,
+				49F2E46020DA423F00A8CC97 /* Pass.swift in Sources */,
 				49AD6B6C20CEAD8C004AFC63 /* Entrant.swift in Sources */,
 				493978A720D2B6AC0080BE0A /* DiscountTests.swift in Sources */,
 				493978A520D2AF0F0080BE0A /* EmployeeTests.swift in Sources */,
