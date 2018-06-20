@@ -9,7 +9,8 @@
 import Foundation
 
 class GuestAreaTests {
-    // Classic Guest should be able to access Amusement Areas
+    
+    // Guest should be able to access Amusement Areas
     static func isEntrantClassicGuestInAmusementAreasAllowed() {
         do {
             let guest = try Guest(entrantType: .classicGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
@@ -24,6 +25,7 @@ class GuestAreaTests {
         }
     }
     
+    // Guest should not be able to access Kitchen Areas
     static func isEntrantVIPGuestInKitchenAreasAllowed() {
         do {
             let guest = try Guest(entrantType: .vipGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
@@ -39,6 +41,7 @@ class GuestAreaTests {
         }
     }
     
+    // Guest should not be able to access Ride Controll Areas
     static func isEntrantFreeChildGuestInRideControllAreasAllowed() {
         do {
             let guest = try Guest(entrantType: .freeChildGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
@@ -53,6 +56,7 @@ class GuestAreaTests {
         }
     }
     
+    // Guest should not be able to access Ride Maintenance Areas
     static func isEntrantClassicGuestInMaintenanceAreasAllowed() {
         do {
             let guest = try Guest(entrantType: .classicGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
@@ -67,6 +71,7 @@ class GuestAreaTests {
         }
     }
     
+    // Guest should not be able to access Office Areas
     static func isVIPGuestInOfficeAreasAllowed() {
         do {
             let guest = try Guest(entrantType: .vipGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
@@ -74,13 +79,14 @@ class GuestAreaTests {
             
             let area = Area(area: .officheAreas)
             
-            print("AREA TEST: A VIP guest wants to access a Ride Maintenance area")
+            print("AREA TEST: A VIP guest wants to access an Office area")
             print(area.guestSwipePass(fromPass: &pass))
         } catch let error {
             print(error)
         }
     }
     
+    // Guest should have Personnal Messages for their birthday in Amusement Areas
     static func hasClassicGuestBirthDateMessage() {
         do {
             let guest = try Guest(entrantType: .classicGuest, dateOfBirth: Date(), firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
@@ -95,6 +101,7 @@ class GuestAreaTests {
         }
     }
     
+    // Guest should not have Personnal Messages in Amusement Areas if it is not their birthday
     static func hasClassicGuestNoBirthDateMessage() {
         do {
             let formatter = DateFormatter()

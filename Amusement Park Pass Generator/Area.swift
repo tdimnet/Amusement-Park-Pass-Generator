@@ -8,7 +8,6 @@
 
 import Foundation
 
-// MARK: Area
 enum AreasEnum {
     case amusementAreas
     case kitchenAreas
@@ -59,6 +58,7 @@ class Area {
         self.area = area
     }
     
+    // Swipe Pass for guests
     func guestSwipePass(fromPass pass: inout GuestPass) -> String {
         if pass.entrant.entrantType.accessLevel >= area.accessLevel {
             if isAbleToSwipe(fromPass: &pass) {
@@ -69,6 +69,7 @@ class Area {
         return "Access not allowed"
     }
     
+    // Can a guest swipe twice in a row
     func isAbleToSwipe(fromPass pass: inout GuestPass) -> Bool {
         if pass.swipeTime == nil {
             pass.swipeTime = Date()
@@ -86,6 +87,7 @@ class Area {
         return true
     }
     
+    // Swipe pass for employees
     func employeeSwipePass(fromPass pass: inout EmployeePass) -> String {
         if pass.entrant.entrantType.accessLevel == EntrantsTypesEnum.rideServicesEmployee.accessLevel && area.accessLevel == AreasEnum.kitchenAreas.accessLevel {
             return "Access not allowed"
@@ -98,6 +100,7 @@ class Area {
         return "Access not allowed"
     }
     
+    // Can an employee swipe twice in a row
     func isAbleToSwipe(fromPass pass: inout EmployeePass) -> Bool {
         if pass.swipeTime == nil {
             pass.swipeTime = Date()
@@ -116,7 +119,9 @@ class Area {
     }
 }
 
+// For Amusement Area, I decided to not implement the "swipe twice in a row" since it is working above and Amusement Areas are open to the public.
 class AmusementArea: Area {
+    
     override init(area: AreasEnum) {
         super.init(area: area)
     }

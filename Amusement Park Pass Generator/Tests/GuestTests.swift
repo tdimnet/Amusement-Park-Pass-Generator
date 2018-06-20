@@ -8,6 +8,7 @@
 
 import Foundation
 class GuestTests {
+    
     // Guest should have an entrant type
     static func isGuestEntrantTypeMissing() {
         do {
@@ -19,6 +20,7 @@ class GuestTests {
         }
     }
     
+    // Other Guest info can be nil
     static func isGuestEntrantNeedRequiredInfo() {
         do {
             let guest = try Guest(entrantType: .classicGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
@@ -29,6 +31,7 @@ class GuestTests {
         }
     }
     
+    // Free Child Guest Birth Date should be inferior to 5 years
     static func shouldFreeChildGuestNotHaveBirthDateError() {
         do {
             let formatter = DateFormatter()
@@ -42,6 +45,7 @@ class GuestTests {
         }
     }
     
+    // Free Child Guest Birth Date cannot be superior to 5 years
     static func shouldFreeChildGuestHaveBirthDateError() {
         do {
             let formatter = DateFormatter()
@@ -52,19 +56,6 @@ class GuestTests {
         } catch let error {
             print(error)
             print("ENTRANT GUEST TEST: ERROR: The Free Child Guest is too old")
-        }
-    }
-//
-    static func shouldClassicGuestHaveBirthDateError() {
-        do {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy/MM/dd"
-            let guestDateOfBirth = formatter.date(from: "2020/02/02")
-            let guest = try Guest(entrantType: .classicGuest, dateOfBirth: guestDateOfBirth, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
-            print("ENTRANT GUEST TEST: OK: The Classic Guest information are correct")
-        } catch let error {
-            print(error)
-            print("ENTRANT GUEST TEST: ERROR: The Classic Guest Date Of Birth is not correct")
         }
     }
 }

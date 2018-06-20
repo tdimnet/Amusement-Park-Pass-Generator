@@ -8,7 +8,6 @@
 
 import Foundation
 
-// MARK: Entrant
 enum EntrantsTypesEnum: String {
     case classicGuest
     case vipGuest

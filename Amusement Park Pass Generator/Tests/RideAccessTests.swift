@@ -9,6 +9,7 @@
 import Foundation
 
 class RideLinesTests {
+    // Classic Guest should not be able to skip ride lines
     static func isClassicUserCanSkipRideLines() {
         do {
             let guest = try Guest(entrantType: .classicGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
@@ -19,6 +20,7 @@ class RideLinesTests {
         }
     }
     
+    // VIP Guest should be able to skip ride lines
     static func isVipUserCanSkipRideLines() {
         do {
             let guest = try Guest(entrantType: .vipGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
@@ -29,6 +31,7 @@ class RideLinesTests {
         }
     }
     
+    // Food Service Employee should not be able to skip ride lines
     static func isFoodServiceEmployeeCanSkipRideLines() {
         do {
             let employe = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: 12345)
@@ -39,6 +42,7 @@ class RideLinesTests {
         }
     }
     
+    // Manager Employee should not be able to skip ride lines
     static func isManagerEmployeeCanSkipRideLines() {
         do {
             let employe = try Employee(entrantType: .managerEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: 12345)
