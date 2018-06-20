@@ -59,9 +59,12 @@ class Area {
         self.area = area
     }
     
-    func guestSwipePass(fromPass pass: GuestPass) -> String {
+    func guestSwipePass(fromPass pass: inout GuestPass) -> String {
         if pass.entrant.entrantType.accessLevel >= area.accessLevel {
-            return "Access Granted"
+            if isAbleToSwipe(fromPass: &pass) {
+                return "Access Granted"
+            }
+            return "Not able to swipe twice in a row"
         }
         return "Access not allowed"
     }
@@ -82,7 +85,6 @@ class Area {
         }
         return true
     }
-    
     
     func employeeSwipePass(fromPass pass: inout EmployeePass) -> String {
         if pass.entrant.entrantType.accessLevel == EntrantsTypesEnum.rideServicesEmployee.accessLevel && area.accessLevel == AreasEnum.kitchenAreas.accessLevel {
