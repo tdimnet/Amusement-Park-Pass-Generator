@@ -117,13 +117,23 @@ class EmployeeAreaTest {
     static func isManagerEmployeeInMaintenanceAreasAllowed() {
         do {
             let employee = try Employee(entrantType: .managerEmployee, dateOfBirth: nil, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: 12345)
-            let pass = EmployeePass(entrant: employee)
+            var pass = EmployeePass(entrant: employee)
             let passAccessLevel = pass.entrant.entrantType.accessLevel
             
             let area = Area(area: .maintenanceAreas)
             
             print("AREA TEST: A Manager Employee wants to access an Maintenance area")
             print(area.swipePass(with: passAccessLevel))
+            
+            
+            print("SWIPPING TWICE TEST: Test of Swipping")
+            print(area.isAbleToSwipe(fromPass: &pass))
+            print(area.isAbleToSwipe(fromPass: &pass))
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+                print(area.isAbleToSwipe(fromPass: &pass))
+            }
+            
         } catch let error {
             print(error)
         }

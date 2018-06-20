@@ -53,6 +53,7 @@ extension AreasEnum {
 
 class Area {
     var area: AreasEnum
+    let swipeTimer = 5
     
     init(area: AreasEnum) {
         self.area = area
@@ -65,6 +66,23 @@ class Area {
             return "Access Granted"
         }
         return "Access not allowed"
+    }
+    
+    func isAbleToSwipe(fromPass pass: inout EmployeePass) -> Bool {
+        if pass.swipeTime == nil {
+            pass.swipeTime = Date()
+            return true
+        }
+        let calendar = Calendar.current
+        let unitFlags = Set<Calendar.Component>([ .second ])
+        let dateComponents = calendar.dateComponents(unitFlags, from: pass.swipeTime!, to: Date())
+        let seconds = dateComponents.second
+        if let seconds = seconds {
+            if seconds < swipeTimer {
+                return false
+            }
+        }
+        return true
     }
 }
 
