@@ -73,12 +73,12 @@ class AmusementArea: Area {
         super.init(area: area)
     }
     
-    func swipePass(with entrant: Guest) -> String {
+    func swipePass(with pass: GuestPass) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let currentDate = dateFormatter.string(from: Date())
         
-        if let birthDate = entrant.dateOfBirth {
+        if let birthDate = pass.entrant.dateOfBirth {
             let birthDateFormatted = dateFormatter.string(from: birthDate)
             if currentDate == birthDateFormatted {
                 return "Happy Birthday! Access Allowed"
