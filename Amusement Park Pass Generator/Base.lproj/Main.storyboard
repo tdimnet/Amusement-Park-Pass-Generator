@@ -182,7 +182,17 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cz-Gu-FUn" userLabel="Fifth Form Sub View">
                                         <rect key="frame" x="0.0" y="663.5" width="768" height="166"/>
-                                        <color key="backgroundColor" red="0.95294117649999999" green="0.59607843140000005" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82w-Kb-zSE">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="166"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="82w-Kb-zSE" firstAttribute="leading" secondItem="5cz-Gu-FUn" secondAttribute="leading" id="0dt-F3-liz"/>
+                                            <constraint firstItem="82w-Kb-zSE" firstAttribute="top" secondItem="5cz-Gu-FUn" secondAttribute="top" id="a2n-ZW-vGb"/>
+                                            <constraint firstAttribute="trailing" secondItem="82w-Kb-zSE" secondAttribute="trailing" id="qf6-TL-JFO"/>
+                                            <constraint firstAttribute="bottom" secondItem="82w-Kb-zSE" secondAttribute="bottom" id="w9b-Rr-dUf"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
