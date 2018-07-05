@@ -123,11 +123,35 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vd-Gx-UT4" userLabel="First Form Sub View">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="132.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gY5-Cp-7PL" userLabel="Birth SSN Project Stack View">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gY5-Cp-7PL" userLabel="Birth SSN Project Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="768" height="132.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BKt-kp-h4l">
+                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="132.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66Z-eC-BIM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="256" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM / DD / YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EO0-1g-AwV">
+                                                                <rect key="frame" x="0.0" y="20.5" width="256" height="112"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L8n-gT-Nel">
+                                                        <rect key="frame" x="256" y="0.0" width="256" height="132.5"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="251-Db-x3t">
+                                                        <rect key="frame" x="512" y="0.0" width="256" height="132.5"/>
+                                                    </stackView>
+                                                </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="gY5-Cp-7PL" secondAttribute="bottom" id="EyN-ZX-8CU"/>
                                             <constraint firstItem="gY5-Cp-7PL" firstAttribute="leading" secondItem="2vd-Gx-UT4" secondAttribute="leading" id="GRr-iN-bVC"/>
