@@ -45,6 +45,9 @@ import UIKit
         }
     }
 }
+/*
+ * End of code snippet
+ */
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
