@@ -54,6 +54,9 @@
                                                 <state key="normal" title="Manager">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onPressEntrantButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wx5-EX-HQF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzH-rK-Jg9" userLabel="vendorEntrantButton">
                                                 <rect key="frame" x="576" y="0.0" width="192" height="102.5"/>
@@ -61,6 +64,9 @@
                                                 <state key="normal" title="Vendor">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onPressEntrantButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YVV-qx-baa"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -75,7 +81,7 @@
                                     <constraint firstItem="mmD-0D-F4q" firstAttribute="leading" secondItem="UYJ-a8-BhU" secondAttribute="leading" id="wNd-8O-6Yc"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sn-Wg-u4B" userLabel="Sub Heading View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sn-Wg-u4B" userLabel="Sub Entrant Type View">
                                 <rect key="frame" x="0.0" y="123" width="768" height="71.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ar0-cI-bvq" userLabel="Sub Entrant Horizontal Stack View">
@@ -119,7 +125,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.32549019607843138" green="0.73333333333333328" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.6470588235294118" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Ar0-cI-bvq" firstAttribute="top" secondItem="3Sn-Wg-u4B" secondAttribute="top" id="Jgt-gE-Z7f"/>
                                     <constraint firstItem="Ar0-cI-bvq" firstAttribute="leading" secondItem="3Sn-Wg-u4B" secondAttribute="leading" id="Rlt-FQ-sHJ"/>
@@ -477,10 +483,15 @@
                         <outlet property="dateOfBirthField" destination="EO0-1g-AwV" id="LpW-sl-NhZ"/>
                         <outlet property="employeeEntrantButton" destination="LCB-F8-RU5" id="uez-Wf-wSu"/>
                         <outlet property="fifthSubEntrantButton" destination="0DX-1l-BkG" id="oKT-pb-BTH"/>
+                        <outlet property="firstSubEntrantButton" destination="bMe-3L-nXy" id="rIS-qA-qEY"/>
+                        <outlet property="fourthSubEntrantButton" destination="i3X-3W-iDY" id="TR1-4W-SwF"/>
                         <outlet property="guestEntrantButton" destination="edV-sw-gMN" id="N2G-8H-eXe"/>
                         <outlet property="managerEntrantButton" destination="4qW-jU-sTg" id="i80-xG-JMq"/>
                         <outlet property="projectField" destination="fiO-W3-qMe" id="yr4-y8-SOt"/>
+                        <outlet property="secondSubEntrantButton" destination="pg0-Eo-h6O" id="9At-XB-vKN"/>
                         <outlet property="ssnField" destination="Fhp-3F-6fR" id="m3B-Gu-1RD"/>
+                        <outlet property="subEntrantTypeView" destination="3Sn-Wg-u4B" id="GU1-B2-4HM"/>
+                        <outlet property="thirdSubEntrantButton" destination="xv5-XD-Nev" id="mk6-IG-QXm"/>
                         <outlet property="vendorEntrantButton" destination="CzH-rK-Jg9" id="eJq-jJ-EjO"/>
                     </connections>
                 </viewController>

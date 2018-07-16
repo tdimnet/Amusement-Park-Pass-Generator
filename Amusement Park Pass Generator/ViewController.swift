@@ -57,7 +57,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var managerEntrantButton: UIButton!
     @IBOutlet weak var vendorEntrantButton: UIButton!
     
+    
+    // Sub Entrant View
+    @IBOutlet weak var subEntrantTypeView: UIView!
+    
+    
     // Sub Entrant Buttons
+    @IBOutlet weak var firstSubEntrantButton: UIButton!
+    @IBOutlet weak var secondSubEntrantButton: UIButton!
+    @IBOutlet weak var thirdSubEntrantButton: UIButton!
+    @IBOutlet weak var fourthSubEntrantButton: UIButton!
     @IBOutlet weak var fifthSubEntrantButton: UIButton!
     
     
@@ -78,7 +87,6 @@ class ViewController: UIViewController {
     }
     
     // MARK: Entrant Button Events
-    
     @IBAction func onPressEntrantButton(_ sender: UIButton) {
         if let title = sender.titleLabel?.text {
             print(title)
@@ -86,7 +94,12 @@ class ViewController: UIViewController {
                 ssnField.isEnabled = false
                 projectField.isEnabled = false
             } else if title == "Employee" {
+                subEntrantTypeView.backgroundColor = .orange
                 fifthSubEntrantButton.isHidden = true
+            } else if title == "Manager" {
+                subEntrantTypeView.backgroundColor = .darkGray
+            } else {
+                subEntrantTypeView.backgroundColor = .magenta
             }
         }
     }
