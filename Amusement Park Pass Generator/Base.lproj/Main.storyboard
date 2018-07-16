@@ -79,30 +79,37 @@
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="71.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMe-3L-nXy" userLabel="firstSubEntrantButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="192" height="71.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="153.5" height="71.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="Child">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pg0-Eo-h6O" userLabel="secondSubEntrantButton">
-                                                <rect key="frame" x="192" y="0.0" width="192" height="71.5"/>
+                                                <rect key="frame" x="153.5" y="0.0" width="153.5" height="71.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="Adult">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xv5-XD-Nev" userLabel="thirdSubEntrantButton">
-                                                <rect key="frame" x="384" y="0.0" width="192" height="71.5"/>
+                                                <rect key="frame" x="307" y="0.0" width="154" height="71.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="Senior">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3X-3W-iDY" userLabel="fourthSubEntrantButton">
-                                                <rect key="frame" x="576" y="0.0" width="192" height="71.5"/>
+                                                <rect key="frame" x="461" y="0.0" width="153.5" height="71.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="VIP">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DX-1l-BkG" userLabel="fifthSubEntrantButton">
+                                                <rect key="frame" x="614.5" y="0.0" width="153.5" height="71.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <state key="normal" title="Season Pass Guest">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -465,8 +472,12 @@
                     </view>
                     <connections>
                         <outlet property="dateOfBirthField" destination="EO0-1g-AwV" id="LpW-sl-NhZ"/>
+                        <outlet property="employeeEntrantButton" destination="LCB-F8-RU5" id="uez-Wf-wSu"/>
                         <outlet property="guestEntrantButton" destination="edV-sw-gMN" id="N2G-8H-eXe"/>
+                        <outlet property="managerEntrantButton" destination="4qW-jU-sTg" id="i80-xG-JMq"/>
+                        <outlet property="projectField" destination="fiO-W3-qMe" id="yr4-y8-SOt"/>
                         <outlet property="ssnField" destination="Fhp-3F-6fR" id="m3B-Gu-1RD"/>
+                        <outlet property="vendorEntrantButton" destination="CzH-rK-Jg9" id="eJq-jJ-EjO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

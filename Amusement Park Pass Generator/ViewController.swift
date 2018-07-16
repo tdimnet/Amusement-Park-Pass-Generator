@@ -53,11 +53,17 @@ class ViewController: UIViewController {
     
     // Entrant Buttons
     @IBOutlet weak var guestEntrantButton: UIButton!
+    @IBOutlet weak var employeeEntrantButton: UIButton!
+    @IBOutlet weak var managerEntrantButton: UIButton!
+    @IBOutlet weak var vendorEntrantButton: UIButton!
+    
+    // Sub Entrant Buttons
     
     
-    //
+    // Form Fields
     @IBOutlet weak var dateOfBirthField: UITextField!
     @IBOutlet weak var ssnField: UITextField!
+    @IBOutlet weak var projectField: UITextField!
     
     
     override func viewDidLoad() {
@@ -76,6 +82,7 @@ class ViewController: UIViewController {
         if let title = sender.titleLabel?.text {
             if title == "Guest" {
                 ssnField.isEnabled = false
+                projectField.isEnabled = false
             }
         }
     }
