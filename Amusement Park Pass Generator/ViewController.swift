@@ -73,7 +73,11 @@ class ViewController: UIViewController {
     // MARK: Entrant Button Events
     
     @IBAction func onPressEntrantButton(_ sender: UIButton) {
-        print("foo")
+        if let title = sender.titleLabel?.text {
+            if title == "Guest" {
+                ssnField.isEnabled = false
+            }
+        }
     }
 }
 
