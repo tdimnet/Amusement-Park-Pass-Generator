@@ -50,6 +50,16 @@ import UIKit
  */
 
 class ViewController: UIViewController {
+    
+    // Entrant Buttons
+    @IBOutlet weak var guestEntrantButton: UIButton!
+    
+    
+    //
+    @IBOutlet weak var dateOfBirthField: UITextField!
+    @IBOutlet weak var ssnField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,6 +68,12 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Entrant Button Events
+    
+    @IBAction func onPressEntrantButton(_ sender: UIButton) {
+        print("foo")
     }
 }
 
