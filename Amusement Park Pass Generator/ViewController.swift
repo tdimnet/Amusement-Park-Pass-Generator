@@ -95,9 +95,26 @@ class ViewController: UIViewController {
                 projectField.isEnabled = false
             } else if title == "Employee" {
                 subEntrantTypeView.backgroundColor = .orange
+                
+                // Change the text of all the buttons
+                firstSubEntrantButton.setTitle("Food Service Employee", for: .normal)
+                firstSubEntrantButton.setTitle("Food Service Employee", for: .highlighted)
+                
+                secondSubEntrantButton.isHidden = false
+                secondSubEntrantButton.setTitle("Ride Service Employee", for: .normal)
+                secondSubEntrantButton.setTitle("Ride Service Employee", for: .highlighted)
+                
+                
                 fifthSubEntrantButton.isHidden = true
             } else if title == "Manager" {
                 subEntrantTypeView.backgroundColor = .darkGray
+                
+                // Change the text of all the buttons
+                secondSubEntrantButton.isHidden = true
+                thirdSubEntrantButton.isHidden = true
+                fourthSubEntrantButton.isHidden = true
+                fifthSubEntrantButton.isHidden = true
+                
             } else {
                 subEntrantTypeView.backgroundColor = .magenta
             }
