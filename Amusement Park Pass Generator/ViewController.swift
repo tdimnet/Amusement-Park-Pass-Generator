@@ -58,6 +58,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var vendorEntrantButton: UIButton!
     
     // Sub Entrant Buttons
+    @IBOutlet weak var fifthSubEntrantButton: UIButton!
     
     
     // Form Fields
@@ -80,9 +81,12 @@ class ViewController: UIViewController {
     
     @IBAction func onPressEntrantButton(_ sender: UIButton) {
         if let title = sender.titleLabel?.text {
+            print(title)
             if title == "Guest" {
                 ssnField.isEnabled = false
                 projectField.isEnabled = false
+            } else if title == "Employee" {
+                fifthSubEntrantButton.isHidden = true
             }
         }
     }
