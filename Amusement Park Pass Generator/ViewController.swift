@@ -91,8 +91,16 @@ class ViewController: UIViewController {
         if let title = sender.titleLabel?.text {
             print(title)
             if title == "Guest" {
+                // Set the sender state as selected
+                sender.isSelected = true
+                
+                // Set the other Entrant Buttons as unselected
+                employeeEntrantButton.isSelected = false
+                managerEntrantButton.isSelected = false
+                vendorEntrantButton.isSelected = false
+                
                 // Set the background color
-                subEntrantTypeView.backgroundColor = .darkGray
+                subEntrantTypeView.backgroundColor = .lightGray
                 
                 // Disabled SSN and Project Field
                 ssnField.isEnabled = false
@@ -123,8 +131,16 @@ class ViewController: UIViewController {
                 subEntrantTypeView.isHidden = false
                 
             } else if title == "Employee" {
+                // Set the sender state as selected
+                sender.isSelected = true
+                
+                // Set the other Entrant Buttons as unselected
+                guestEntrantButton.isSelected = false
+                managerEntrantButton.isSelected = false
+                vendorEntrantButton.isSelected = false
+                
                 // Set the background color
-                subEntrantTypeView.backgroundColor = .orange
+                subEntrantTypeView.backgroundColor = .darkGray
                 
                 // Enable SSN and Project Field
                 ssnField.isEnabled = true
@@ -151,14 +167,24 @@ class ViewController: UIViewController {
                 // Show all the sub entrants
                 subEntrantTypeView.isHidden = false
             } else if title == "Manager" {
-                // Set the background color
-                subEntrantTypeView.backgroundColor = .darkGray
+                // Set the sender state as selected
+                sender.isSelected = true
+                
+                // Set the other Entrant Buttons as unselected
+                guestEntrantButton.isSelected = false
+                employeeEntrantButton.isSelected = false
+                vendorEntrantButton.isSelected = false
                 
                 // Hide all the sub entrants
                 subEntrantTypeView.isHidden = true
             } else {
-                // Set the background color
-                subEntrantTypeView.backgroundColor = .magenta
+                // Set the sender state as selected
+                sender.isSelected = true
+                
+                // Set the other Entrant Buttons as unselected
+                guestEntrantButton.isSelected = false
+                employeeEntrantButton.isSelected = false
+                managerEntrantButton.isSelected = false
                 
                 // Hide all the sub entrants
                 subEntrantTypeView.isHidden = true
