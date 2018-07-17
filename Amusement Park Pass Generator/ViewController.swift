@@ -119,6 +119,9 @@ class ViewController: UIViewController {
                 fifthSubEntrantButton.setTitle("Season Pass Guest", for: .normal)
                 fifthSubEntrantButton.setTitle("Season Pass Guest", for: .highlighted)
                 
+                // Show all the sub entrants
+                subEntrantTypeView.isHidden = false
+                
             } else if title == "Employee" {
                 // Set the background color
                 subEntrantTypeView.backgroundColor = .orange
@@ -144,22 +147,21 @@ class ViewController: UIViewController {
                 fourthSubEntrantButton.setTitle("Contract Employee", for: .highlighted)
                 
                 fifthSubEntrantButton.isHidden = true
+                
+                // Show all the sub entrants
+                subEntrantTypeView.isHidden = false
             } else if title == "Manager" {
                 // Set the background color
                 subEntrantTypeView.backgroundColor = .darkGray
                 
-                // Hide all the useless buttons
-                secondSubEntrantButton.isHidden = true
-                thirdSubEntrantButton.isHidden = true
-                fourthSubEntrantButton.isHidden = true
-                fifthSubEntrantButton.isHidden = true
-                
-                // Change the text of all the buttons
-                firstSubEntrantButton.setTitle("Manager", for: .normal)
-                firstSubEntrantButton.setTitle("Manager", for: .highlighted)
+                // Hide all the sub entrants
+                subEntrantTypeView.isHidden = true
             } else {
                 // Set the background color
                 subEntrantTypeView.backgroundColor = .magenta
+                
+                // Hide all the sub entrants
+                subEntrantTypeView.isHidden = true
             }
         }
     }
