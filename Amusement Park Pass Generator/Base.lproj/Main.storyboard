@@ -25,44 +25,70 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mmD-0D-F4q" userLabel="Entrant Horizontal Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="102.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edV-sw-gMN" userLabel="First Entrant Button">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edV-sw-gMN" userLabel="guestEntrantButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="192" height="102.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Guest">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <state key="selected">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.32549019610000002" green="0.73333333329999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <state key="highlighted">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onPressEntrantButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WlD-0w-cBC"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCB-F8-RU5" userLabel="Second Entrant Button">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCB-F8-RU5" userLabel="employeeEntrantButton">
                                                 <rect key="frame" x="192" y="0.0" width="192" height="102.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Employee">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="0.32549019610000002" green="0.73333333329999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onPressEntrantButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gQL-eN-uRe"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qW-jU-sTg" userLabel="Third Entrant Button">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qW-jU-sTg" userLabel="managerEntrantButton">
                                                 <rect key="frame" x="384" y="0.0" width="192" height="102.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Manager">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="0.32549019610000002" green="0.73333333329999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onPressEntrantButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wx5-EX-HQF"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzH-rK-Jg9" userLabel="Fourth Entrant Button">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzH-rK-Jg9" userLabel="vendorEntrantButton">
                                                 <rect key="frame" x="576" y="0.0" width="192" height="102.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Vendor">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="0.32549019610000002" green="0.73333333329999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onPressEntrantButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YVV-qx-baa"/>
+                                                </connections>
                                             </button>
                                         </subviews>
+                                        <color key="tintColor" red="0.39215686274509803" green="0.40000000000000002" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.24313725489999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.39215686274509803" green="0.40000000000000002" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mmD-0D-F4q" secondAttribute="trailing" id="8BC-tr-RZv"/>
                                     <constraint firstAttribute="trailing" secondItem="mmD-0D-F4q" secondAttribute="trailing" id="Fp6-la-rap"/>
@@ -72,44 +98,51 @@
                                     <constraint firstItem="mmD-0D-F4q" firstAttribute="leading" secondItem="UYJ-a8-BhU" secondAttribute="leading" id="wNd-8O-6Yc"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sn-Wg-u4B" userLabel="Sub Heading View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sn-Wg-u4B" userLabel="Sub Entrant Type View">
                                 <rect key="frame" x="0.0" y="123" width="768" height="71.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ar0-cI-bvq" userLabel="Sub Entrant Horizontal Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="71.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMe-3L-nXy" userLabel="First Sub Entrant Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="192" height="71.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMe-3L-nXy" userLabel="firstSubEntrantButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="153.5" height="71.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="Child">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pg0-Eo-h6O" userLabel="Second Sub Entrant Button">
-                                                <rect key="frame" x="192" y="0.0" width="192" height="71.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pg0-Eo-h6O" userLabel="secondSubEntrantButton">
+                                                <rect key="frame" x="153.5" y="0.0" width="153.5" height="71.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="Adult">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xv5-XD-Nev" userLabel="Third Sub Entrant Button">
-                                                <rect key="frame" x="384" y="0.0" width="192" height="71.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xv5-XD-Nev" userLabel="thirdSubEntrantButton">
+                                                <rect key="frame" x="307" y="0.0" width="154" height="71.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="Senior">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3X-3W-iDY" userLabel="Fourth Sub Entrant Button">
-                                                <rect key="frame" x="576" y="0.0" width="192" height="71.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3X-3W-iDY" userLabel="fourthSubEntrantButton">
+                                                <rect key="frame" x="461" y="0.0" width="153.5" height="71.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="VIP">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DX-1l-BkG" userLabel="fifthSubEntrantButton">
+                                                <rect key="frame" x="614.5" y="0.0" width="153.5" height="71.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <state key="normal" title="Season Pass Guest">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.32549019607843138" green="0.73333333333333328" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.6470588235294118" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Ar0-cI-bvq" firstAttribute="top" secondItem="3Sn-Wg-u4B" secondAttribute="top" id="Jgt-gE-Z7f"/>
                                     <constraint firstItem="Ar0-cI-bvq" firstAttribute="leading" secondItem="3Sn-Wg-u4B" secondAttribute="leading" id="Rlt-FQ-sHJ"/>
@@ -129,13 +162,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BKt-kp-h4l">
                                                         <rect key="frame" x="0.0" y="0.0" width="256" height="132.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66Z-eC-BIM">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66Z-eC-BIM" userLabel="dateOfBirthLabel">
                                                                 <rect key="frame" x="16" y="24" width="224" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                 <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="MM / DD / YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EO0-1g-AwV">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="MM / DD / YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EO0-1g-AwV" userLabel="dateOfBirthField">
                                                                 <rect key="frame" x="16" y="61.5" width="224" height="47"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -147,13 +180,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Z3E-jS-Vy5">
                                                         <rect key="frame" x="256" y="0.0" width="256" height="132.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SSN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="az1-gs-boV">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SSN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="az1-gs-boV" userLabel="ssnLabel">
                                                                 <rect key="frame" x="16" y="24" width="224" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                 <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="### - ## - ####" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fhp-3F-6fR">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="### - ## - ####" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fhp-3F-6fR" userLabel="ssnField">
                                                                 <rect key="frame" x="16" y="61.5" width="224" height="47"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -165,13 +198,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TjS-te-wHG">
                                                         <rect key="frame" x="512" y="0.0" width="256" height="132.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN1-F3-ams">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN1-F3-ams" userLabel="projectLabel">
                                                                 <rect key="frame" x="16" y="24" width="224" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                 <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="#######" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fiO-W3-qMe">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="#######" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fiO-W3-qMe" userLabel="projectField">
                                                                 <rect key="frame" x="16" y="61.5" width="224" height="47"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -463,6 +496,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="dateOfBirthField" destination="EO0-1g-AwV" id="LpW-sl-NhZ"/>
+                        <outlet property="employeeEntrantButton" destination="LCB-F8-RU5" id="uez-Wf-wSu"/>
+                        <outlet property="fifthSubEntrantButton" destination="0DX-1l-BkG" id="oKT-pb-BTH"/>
+                        <outlet property="firstSubEntrantButton" destination="bMe-3L-nXy" id="rIS-qA-qEY"/>
+                        <outlet property="fourthSubEntrantButton" destination="i3X-3W-iDY" id="TR1-4W-SwF"/>
+                        <outlet property="guestEntrantButton" destination="edV-sw-gMN" id="N2G-8H-eXe"/>
+                        <outlet property="managerEntrantButton" destination="4qW-jU-sTg" id="i80-xG-JMq"/>
+                        <outlet property="projectField" destination="fiO-W3-qMe" id="yr4-y8-SOt"/>
+                        <outlet property="secondSubEntrantButton" destination="pg0-Eo-h6O" id="9At-XB-vKN"/>
+                        <outlet property="ssnField" destination="Fhp-3F-6fR" id="m3B-Gu-1RD"/>
+                        <outlet property="subEntrantTypeView" destination="3Sn-Wg-u4B" id="GU1-B2-4HM"/>
+                        <outlet property="thirdSubEntrantButton" destination="xv5-XD-Nev" id="mk6-IG-QXm"/>
+                        <outlet property="vendorEntrantButton" destination="CzH-rK-Jg9" id="eJq-jJ-EjO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
