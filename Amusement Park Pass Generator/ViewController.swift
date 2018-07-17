@@ -91,6 +91,9 @@ class ViewController: UIViewController {
         if let title = sender.titleLabel?.text {
             print(title)
             if title == "Guest" {
+                // Set the background color
+                subEntrantTypeView.backgroundColor = .darkGray
+                
                 // Disabled SSN and Project Field
                 ssnField.isEnabled = false
                 projectField.isEnabled = false
@@ -117,6 +120,7 @@ class ViewController: UIViewController {
                 fifthSubEntrantButton.setTitle("Season Pass Guest", for: .highlighted)
                 
             } else if title == "Employee" {
+                // Set the background color
                 subEntrantTypeView.backgroundColor = .orange
                 
                 // Enable SSN and Project Field
@@ -141,18 +145,20 @@ class ViewController: UIViewController {
                 
                 fifthSubEntrantButton.isHidden = true
             } else if title == "Manager" {
+                // Set the background color
                 subEntrantTypeView.backgroundColor = .darkGray
                 
-                firstSubEntrantButton.setTitle("Manager", for: .normal)
-                firstSubEntrantButton.setTitle("Manager", for: .highlighted)
-                
-                // Change the text of all the buttons
+                // Hide all the useless buttons
                 secondSubEntrantButton.isHidden = true
                 thirdSubEntrantButton.isHidden = true
                 fourthSubEntrantButton.isHidden = true
                 fifthSubEntrantButton.isHidden = true
                 
+                // Change the text of all the buttons
+                firstSubEntrantButton.setTitle("Manager", for: .normal)
+                firstSubEntrantButton.setTitle("Manager", for: .highlighted)
             } else {
+                // Set the background color
                 subEntrantTypeView.backgroundColor = .magenta
             }
         }
