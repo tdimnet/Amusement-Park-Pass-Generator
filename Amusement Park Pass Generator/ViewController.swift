@@ -91,10 +91,37 @@ class ViewController: UIViewController {
         if let title = sender.titleLabel?.text {
             print(title)
             if title == "Guest" {
+                // Disabled SSN and Project Field
                 ssnField.isEnabled = false
                 projectField.isEnabled = false
+                
+                // Change the text of all the buttons
+                firstSubEntrantButton.isHidden = false
+                firstSubEntrantButton.setTitle("Child", for: .normal)
+                firstSubEntrantButton.setTitle("Child", for: .highlighted)
+                
+                secondSubEntrantButton.isHidden = false
+                secondSubEntrantButton.setTitle("Adult", for: .normal)
+                secondSubEntrantButton.setTitle("Adult", for: .highlighted)
+                
+                thirdSubEntrantButton.isHidden = false
+                thirdSubEntrantButton.setTitle("Senior", for: .normal)
+                thirdSubEntrantButton.setTitle("Senior", for: .highlighted)
+                
+                fourthSubEntrantButton.isHidden = false
+                fourthSubEntrantButton.setTitle("VIP", for: .normal)
+                fourthSubEntrantButton.setTitle("VIP", for: .highlighted)
+                
+                fifthSubEntrantButton.isHidden = false
+                fifthSubEntrantButton.setTitle("Season Pass Guest", for: .normal)
+                fifthSubEntrantButton.setTitle("Season Pass Guest", for: .highlighted)
+                
             } else if title == "Employee" {
                 subEntrantTypeView.backgroundColor = .orange
+                
+                // Enable SSN and Project Field
+                ssnField.isEnabled = true
+                projectField.isEnabled = true
                 
                 // Change the text of all the buttons
                 firstSubEntrantButton.setTitle("Food Service Employee", for: .normal)
@@ -104,10 +131,20 @@ class ViewController: UIViewController {
                 secondSubEntrantButton.setTitle("Ride Service Employee", for: .normal)
                 secondSubEntrantButton.setTitle("Ride Service Employee", for: .highlighted)
                 
+                thirdSubEntrantButton.isHidden = false
+                thirdSubEntrantButton.setTitle("Maintenance Employee", for: .normal)
+                thirdSubEntrantButton.setTitle("Maintenance Employee", for: .highlighted)
+                
+                fourthSubEntrantButton.isHidden = false
+                fourthSubEntrantButton.setTitle("Contract Employee", for: .normal)
+                fourthSubEntrantButton.setTitle("Contract Employee", for: .highlighted)
                 
                 fifthSubEntrantButton.isHidden = true
             } else if title == "Manager" {
                 subEntrantTypeView.backgroundColor = .darkGray
+                
+                firstSubEntrantButton.setTitle("Manager", for: .normal)
+                firstSubEntrantButton.setTitle("Manager", for: .highlighted)
                 
                 // Change the text of all the buttons
                 secondSubEntrantButton.isHidden = true
