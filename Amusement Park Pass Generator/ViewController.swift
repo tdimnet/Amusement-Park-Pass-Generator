@@ -57,7 +57,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var managerEntrantButton: UIButton!
     @IBOutlet weak var vendorEntrantButton: UIButton!
     
+    
+    // Sub Entrant View
+    @IBOutlet weak var subEntrantTypeView: UIView!
+    
+    
     // Sub Entrant Buttons
+    @IBOutlet weak var firstSubEntrantButton: UIButton!
+    @IBOutlet weak var secondSubEntrantButton: UIButton!
+    @IBOutlet weak var thirdSubEntrantButton: UIButton!
+    @IBOutlet weak var fourthSubEntrantButton: UIButton!
+    @IBOutlet weak var fifthSubEntrantButton: UIButton!
     
     
     // Form Fields
@@ -77,12 +87,107 @@ class ViewController: UIViewController {
     }
     
     // MARK: Entrant Button Events
-    
     @IBAction func onPressEntrantButton(_ sender: UIButton) {
         if let title = sender.titleLabel?.text {
+            print(title)
             if title == "Guest" {
+                // Set the sender state as selected
+                sender.isSelected = true
+                
+                // Set the other Entrant Buttons as unselected
+                employeeEntrantButton.isSelected = false
+                managerEntrantButton.isSelected = false
+                vendorEntrantButton.isSelected = false
+                
+                // Set the background color
+                subEntrantTypeView.backgroundColor = .lightGray
+                
+                // Disabled SSN and Project Field
                 ssnField.isEnabled = false
                 projectField.isEnabled = false
+                
+                // Change the text of all the buttons
+                firstSubEntrantButton.isHidden = false
+                firstSubEntrantButton.setTitle("Child", for: .normal)
+                firstSubEntrantButton.setTitle("Child", for: .highlighted)
+                
+                secondSubEntrantButton.isHidden = false
+                secondSubEntrantButton.setTitle("Adult", for: .normal)
+                secondSubEntrantButton.setTitle("Adult", for: .highlighted)
+                
+                thirdSubEntrantButton.isHidden = false
+                thirdSubEntrantButton.setTitle("Senior", for: .normal)
+                thirdSubEntrantButton.setTitle("Senior", for: .highlighted)
+                
+                fourthSubEntrantButton.isHidden = false
+                fourthSubEntrantButton.setTitle("VIP", for: .normal)
+                fourthSubEntrantButton.setTitle("VIP", for: .highlighted)
+                
+                fifthSubEntrantButton.isHidden = false
+                fifthSubEntrantButton.setTitle("Season Pass Guest", for: .normal)
+                fifthSubEntrantButton.setTitle("Season Pass Guest", for: .highlighted)
+                
+                // Show all the sub entrants
+                subEntrantTypeView.isHidden = false
+                
+            } else if title == "Employee" {
+                // Set the sender state as selected
+                sender.isSelected = true
+                
+                // Set the other Entrant Buttons as unselected
+                guestEntrantButton.isSelected = false
+                managerEntrantButton.isSelected = false
+                vendorEntrantButton.isSelected = false
+                
+                // Set the background color
+                subEntrantTypeView.backgroundColor = .darkGray
+                
+                // Enable SSN and Project Field
+                ssnField.isEnabled = true
+                projectField.isEnabled = true
+                
+                // Change the text of all the buttons
+                firstSubEntrantButton.setTitle("Food Service Employee", for: .normal)
+                firstSubEntrantButton.setTitle("Food Service Employee", for: .highlighted)
+                
+                secondSubEntrantButton.isHidden = false
+                secondSubEntrantButton.setTitle("Ride Service Employee", for: .normal)
+                secondSubEntrantButton.setTitle("Ride Service Employee", for: .highlighted)
+                
+                thirdSubEntrantButton.isHidden = false
+                thirdSubEntrantButton.setTitle("Maintenance Employee", for: .normal)
+                thirdSubEntrantButton.setTitle("Maintenance Employee", for: .highlighted)
+                
+                fourthSubEntrantButton.isHidden = false
+                fourthSubEntrantButton.setTitle("Contract Employee", for: .normal)
+                fourthSubEntrantButton.setTitle("Contract Employee", for: .highlighted)
+                
+                fifthSubEntrantButton.isHidden = true
+                
+                // Show all the sub entrants
+                subEntrantTypeView.isHidden = false
+            } else if title == "Manager" {
+                // Set the sender state as selected
+                sender.isSelected = true
+                
+                // Set the other Entrant Buttons as unselected
+                guestEntrantButton.isSelected = false
+                employeeEntrantButton.isSelected = false
+                vendorEntrantButton.isSelected = false
+                
+                // Hide all the sub entrants
+                subEntrantTypeView.isHidden = true
+            } else {
+                // Set the sender state as selected
+                sender.isSelected = true
+                
+                // Set the other Entrant Buttons as unselected
+                guestEntrantButton.isSelected = false
+                employeeEntrantButton.isSelected = false
+                managerEntrantButton.isSelected = false
+                
+                // Hide all the sub entrants
+                subEntrantTypeView.isHidden = true
             }
         }
     }
