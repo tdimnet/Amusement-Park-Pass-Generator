@@ -535,19 +535,26 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cityField" destination="k0c-5q-C7g" id="KbJ-8y-WyM"/>
+                        <outlet property="companyField" destination="EP8-Bi-Eca" id="7d1-vq-yAE"/>
                         <outlet property="dateOfBirthField" destination="EO0-1g-AwV" id="LpW-sl-NhZ"/>
                         <outlet property="employeeEntrantButton" destination="LCB-F8-RU5" id="uez-Wf-wSu"/>
                         <outlet property="fifthSubEntrantButton" destination="0DX-1l-BkG" id="oKT-pb-BTH"/>
+                        <outlet property="firstNameField" destination="7uW-2U-oUP" id="kBh-1d-GlQ"/>
                         <outlet property="firstSubEntrantButton" destination="bMe-3L-nXy" id="rIS-qA-qEY"/>
                         <outlet property="fourthSubEntrantButton" destination="i3X-3W-iDY" id="TR1-4W-SwF"/>
                         <outlet property="guestEntrantButton" destination="edV-sw-gMN" id="N2G-8H-eXe"/>
+                        <outlet property="lastNameField" destination="zHL-Sa-qhi" id="SnI-Ea-CyM"/>
                         <outlet property="managerEntrantButton" destination="4qW-jU-sTg" id="i80-xG-JMq"/>
                         <outlet property="projectField" destination="fiO-W3-qMe" id="yr4-y8-SOt"/>
                         <outlet property="secondSubEntrantButton" destination="pg0-Eo-h6O" id="9At-XB-vKN"/>
                         <outlet property="ssnField" destination="Fhp-3F-6fR" id="m3B-Gu-1RD"/>
+                        <outlet property="stateField" destination="XOX-QP-QMf" id="jZs-A7-EjA"/>
+                        <outlet property="streetAddressField" destination="41v-pO-9G0" id="2eZ-Dm-hlR"/>
                         <outlet property="subEntrantTypeView" destination="3Sn-Wg-u4B" id="GU1-B2-4HM"/>
                         <outlet property="thirdSubEntrantButton" destination="xv5-XD-Nev" id="mk6-IG-QXm"/>
                         <outlet property="vendorEntrantButton" destination="CzH-rK-Jg9" id="eJq-jJ-EjO"/>
+                        <outlet property="zipCodeField" destination="HCe-pL-7sR" id="3Ik-2x-a67"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

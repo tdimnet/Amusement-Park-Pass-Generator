@@ -73,7 +73,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var dateOfBirthField: UITextField!
     @IBOutlet weak var ssnField: UITextField!
     @IBOutlet weak var projectField: UITextField!
-    
+    @IBOutlet weak var firstNameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
+    @IBOutlet weak var companyField: UITextField!
+    @IBOutlet weak var streetAddressField: UITextField!
+    @IBOutlet weak var cityField: UITextField!
+    @IBOutlet weak var stateField: UITextField!
+    @IBOutlet weak var zipCodeField: UITextField!
     
     // MARK: Stored Properties
     var entrantType: String? = nil
@@ -231,27 +237,20 @@ class ViewController: UIViewController {
         
         
         if let entrantType = self.entrantType {
-            if entrantType == "Guest" {
-                print("Entrant is a Guest")
-                do {
-                    let guest = try Guest(entrantType: .classicGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
-                } catch let error {
-                    guard let error = error as? EntrantErrors else { return }
-                    var message = ""
-                    switch error {
-                    case .entrantError(let reason):
-                        message = reason
-                    case .nameError(let reason):
-                        message = reason
-                    case .addressError(let reason):
-                        message = reason
-                    }
-                    showAlertWith(title: "Something is missing!", message: message)
-                }
-            } else if entrantType == "Employee" {
+            if entrantType == "Employee" {
                 print("Entrant is an employee")
+                
                 do {
-                    let employee = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
+                    let employee = try Employee(
+                        entrantType: .foodServicesEmployee,
+                        dateOfBirth: nil,
+                        firstName: nil,
+                        lastName: nil,
+                        streetAddress: nil,
+                        city: nil,
+                        state: nil,
+                        zipCode: nil
+                    )
                 } catch let error {
                     guard let error = error as? EntrantErrors else { return }
                     var message = ""
