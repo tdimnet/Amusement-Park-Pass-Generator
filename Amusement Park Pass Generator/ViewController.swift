@@ -75,7 +75,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var ssnField: UITextField!
     @IBOutlet weak var projectField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,10 +85,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Entrant Button Events
+    
+    // MARK: IBAction
+    
+    // Select Entrant Type Event
     @IBAction func onPressEntrantButton(_ sender: UIButton) {
         if let title = sender.titleLabel?.text {
-            print(title)
             if title == "Guest" {
                 // Set the sender state as selected
                 sender.isSelected = true
@@ -192,7 +193,17 @@ class ViewController: UIViewController {
         }
     }
     
+    // Internal Method
+    func showAlertWith(title: String, message: String, style: UIAlertControllerStyle = .alert) -> Void {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
     
+    // Select Sub Entrant Event
     @IBAction func onPressSubEntrantButton(_ sender: UIButton) {
         // First unselect all sub entrant buttons
         firstSubEntrantButton.isSelected = false
@@ -204,5 +215,11 @@ class ViewController: UIViewController {
         // Then select the sender
         sender.isSelected = true
     }
+    
+    // Generate Pass Event
+    @IBAction func onPressGeneratePassButton(_ sender: UIButton) {
+        showAlertWith(title: "Oups!", message: "An error occurs")
+    }
+    
 }
 
