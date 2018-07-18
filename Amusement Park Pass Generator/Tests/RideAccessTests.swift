@@ -34,7 +34,7 @@ class RideLinesTests {
     // Food Service Employee should not be able to skip ride lines
     static func isFoodServiceEmployeeCanSkipRideLines() {
         do {
-            let employe = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: 12345)
+            let employe = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: "12345")
             print("RIDE LINES TEST: A Food Service Employee wants to skip ride lines")
             print(employe.canEntrantSkipRideLines(entrant: employe).message)
         } catch let error {
@@ -45,7 +45,7 @@ class RideLinesTests {
     // Manager Employee should not be able to skip ride lines
     static func isManagerEmployeeCanSkipRideLines() {
         do {
-            let employe = try Employee(entrantType: .managerEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: 12345)
+            let employe = try Employee(entrantType: .managerEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: "12345")
             print("RIDE LINES TEST: A Manager Employee wants to skip ride lines")
             print(employe.canEntrantSkipRideLines(entrant: employe).message)
         } catch let error {

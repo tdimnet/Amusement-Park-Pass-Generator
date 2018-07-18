@@ -244,12 +244,12 @@ class ViewController: UIViewController {
                     let employee = try Employee(
                         entrantType: .foodServicesEmployee,
                         dateOfBirth: nil,
-                        firstName: nil,
-                        lastName: nil,
-                        streetAddress: nil,
-                        city: nil,
-                        state: nil,
-                        zipCode: nil
+                        firstName: firstNameField.text ?? "",
+                        lastName: lastNameField.text ?? "",
+                        streetAddress: streetAddressField.text ?? "",
+                        city: cityField.text ?? "",
+                        state: stateField.text ?? "",
+                        zipCode: zipCodeField.text ?? ""
                     )
                 } catch let error {
                     guard let error = error as? EntrantErrors else { return }
