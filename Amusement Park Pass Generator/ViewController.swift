@@ -191,5 +191,10 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func onPressSubEntrantButton(_ sender: UIButton) {
+        sender.isSelected = true
+    }
 }
 
