@@ -194,6 +194,14 @@ class ViewController: UIViewController {
     
     
     @IBAction func onPressSubEntrantButton(_ sender: UIButton) {
+        // First unselect all sub entrant buttons
+        firstSubEntrantButton.isSelected = false
+        secondSubEntrantButton.isSelected = false
+        thirdSubEntrantButton.isSelected = false
+        fourthSubEntrantButton.isSelected = false
+        fifthSubEntrantButton.isSelected = false
+        
+        // Then select the sender
         sender.isSelected = true
     }
 }
