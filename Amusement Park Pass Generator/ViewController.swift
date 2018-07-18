@@ -51,16 +51,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: IBOutlet
+    
     // Entrant Buttons
     @IBOutlet weak var guestEntrantButton: UIButton!
     @IBOutlet weak var employeeEntrantButton: UIButton!
     @IBOutlet weak var managerEntrantButton: UIButton!
     @IBOutlet weak var vendorEntrantButton: UIButton!
     
-    
     // Sub Entrant View
     @IBOutlet weak var subEntrantTypeView: UIView!
-    
     
     // Sub Entrant Buttons
     @IBOutlet weak var firstSubEntrantButton: UIButton!
@@ -69,7 +69,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var fourthSubEntrantButton: UIButton!
     @IBOutlet weak var fifthSubEntrantButton: UIButton!
     
-    
     // Form Fields
     @IBOutlet weak var dateOfBirthField: UITextField!
     @IBOutlet weak var ssnField: UITextField!
@@ -77,7 +76,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -218,7 +216,23 @@ class ViewController: UIViewController {
     
     // Generate Pass Event
     @IBAction func onPressGeneratePassButton(_ sender: UIButton) {
-        showAlertWith(title: "Oups!", message: "An error occurs")
+        
+        do {
+            let employee = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: nil, zipCode: 12345)
+        } catch let error {
+            guard let error = error as? EntrantErrors else { return }
+            var message = ""
+            switch error {
+            case .entrantError(let reason):
+                message = reason
+            case .nameError(let reason):
+                message = reason
+            case .addressError(let reason):
+                message = reason
+            }
+            
+            showAlertWith(title: "Something is missing!", message: message)
+        }
     }
     
 }
