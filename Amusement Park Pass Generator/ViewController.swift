@@ -74,6 +74,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var ssnField: UITextField!
     @IBOutlet weak var projectField: UITextField!
     
+    
+    // MARK: Stored Properties
+    var entrantType: String? = nil
+    
+    
+    // MARK: Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -84,11 +91,26 @@ class ViewController: UIViewController {
     }
     
     
+    // MARK: Internal Methods
+    
+    // Show text alert
+    func showAlertWith(title: String, message: String, style: UIAlertControllerStyle = .alert) -> Void {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
     // MARK: IBAction
     
     // Select Entrant Type Event
     @IBAction func onPressEntrantButton(_ sender: UIButton) {
         if let title = sender.titleLabel?.text {
+            
+            self.entrantType = title
+            
             if title == "Guest" {
                 // Set the sender state as selected
                 sender.isSelected = true
@@ -191,16 +213,6 @@ class ViewController: UIViewController {
         }
     }
     
-    // Internal Method
-    func showAlertWith(title: String, message: String, style: UIAlertControllerStyle = .alert) -> Void {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        alertController.addAction(okAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
     // Select Sub Entrant Event
     @IBAction func onPressSubEntrantButton(_ sender: UIButton) {
         // First unselect all sub entrant buttons
@@ -217,21 +229,45 @@ class ViewController: UIViewController {
     // Generate Pass Event
     @IBAction func onPressGeneratePassButton(_ sender: UIButton) {
         
-        do {
-            let employee = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: nil, zipCode: 12345)
-        } catch let error {
-            guard let error = error as? EntrantErrors else { return }
-            var message = ""
-            switch error {
-            case .entrantError(let reason):
-                message = reason
-            case .nameError(let reason):
-                message = reason
-            case .addressError(let reason):
-                message = reason
+        
+        if let entrantType = self.entrantType {
+            if entrantType == "Guest" {
+                print("Entrant is a Guest")
+                do {
+                    let guest = try Guest(entrantType: .classicGuest, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
+                } catch let error {
+                    guard let error = error as? EntrantErrors else { return }
+                    var message = ""
+                    switch error {
+                    case .entrantError(let reason):
+                        message = reason
+                    case .nameError(let reason):
+                        message = reason
+                    case .addressError(let reason):
+                        message = reason
+                    }
+                    showAlertWith(title: "Something is missing!", message: message)
+                }
+            } else if entrantType == "Employee" {
+                print("Entrant is an employee")
+                do {
+                    let employee = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
+                } catch let error {
+                    guard let error = error as? EntrantErrors else { return }
+                    var message = ""
+                    switch error {
+                    case .entrantError(let reason):
+                        message = reason
+                    case .nameError(let reason):
+                        message = reason
+                    case .addressError(let reason):
+                        message = reason
+                    }
+                    showAlertWith(title: "Something is missing!", message: message)
+                }
+            } else {
+                print("Do nothing for now")
             }
-            
-            showAlertWith(title: "Something is missing!", message: message)
         }
     }
     
