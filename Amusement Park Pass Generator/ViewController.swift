@@ -202,8 +202,24 @@ class ViewController: UIViewController {
                 employeeEntrantButton.isSelected = false
                 vendorEntrantButton.isSelected = false
                 
+                // Change the text of the buttons
+                firstSubEntrantButton.setTitle("Shift Manager", for: .normal)
+                firstSubEntrantButton.setTitle("Shift Manager", for: .highlighted)
+                
+                secondSubEntrantButton.isHidden = false
+                secondSubEntrantButton.setTitle("General Manager", for: .normal)
+                secondSubEntrantButton.setTitle("General Manager", for: .highlighted)
+                
+                thirdSubEntrantButton.isHidden = false
+                thirdSubEntrantButton.setTitle("Senior Manager", for: .normal)
+                thirdSubEntrantButton.setTitle("Senior Manager", for: .highlighted)
+                
+                // Hide the two unecessary sub entrant buttons
+                fourthSubEntrantButton.isHidden = true
+                fifthSubEntrantButton.isHidden = true
+                
                 // Hide all the sub entrants
-                subEntrantTypeView.isHidden = true
+                subEntrantTypeView.isHidden = false
             } else {
                 // Set the sender state as selected
                 sender.isSelected = true
