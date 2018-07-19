@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		493329A020D3BC540050EED6 /* GuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933299F20D3BC540050EED6 /* GuestTests.swift */; };
 		493329A220D3F48E0050EED6 /* GuestAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493329A120D3F48E0050EED6 /* GuestAreaTests.swift */; };
+		49391B882100EF9800EE097F /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49391B872100EF9800EE097F /* Vendor.swift */; };
 		493978A520D2AF0F0080BE0A /* EmployeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A420D2AF0F0080BE0A /* EmployeeTests.swift */; };
 		493978A720D2B6AC0080BE0A /* DiscountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493978A620D2B6AC0080BE0A /* DiscountTests.swift */; };
 		494D4DE220D9286A00C8876A /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D4DE120D9286A00C8876A /* Area.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		4933299F20D3BC540050EED6 /* GuestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTests.swift; sourceTree = "<group>"; };
 		493329A120D3F48E0050EED6 /* GuestAreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestAreaTests.swift; sourceTree = "<group>"; };
+		49391B872100EF9800EE097F /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
 		493978A420D2AF0F0080BE0A /* EmployeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTests.swift; sourceTree = "<group>"; };
 		493978A620D2B6AC0080BE0A /* DiscountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountTests.swift; sourceTree = "<group>"; };
 		494D4DE120D9286A00C8876A /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
@@ -59,6 +61,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49391B892100EF9E00EE097F /* Entrants */ = {
+			isa = PBXGroup;
+			children = (
+				49AD6B6B20CEAD8C004AFC63 /* Entrant.swift */,
+				494D4DE520D929CE00C8876A /* Guest.swift */,
+				494D4DE720D92A3800C8876A /* Employee.swift */,
+				49391B872100EF9800EE097F /* Vendor.swift */,
+			);
+			path = Entrants;
+			sourceTree = "<group>";
+		};
+		49391B8A2100EFBF00EE097F /* Area */ = {
+			isa = PBXGroup;
+			children = (
+				494D4DE120D9286A00C8876A /* Area.swift */,
+			);
+			path = Area;
+			sourceTree = "<group>";
+		};
+		49391B8B2100EFCC00EE097F /* Pass */ = {
+			isa = PBXGroup;
+			children = (
+				49F2E45F20DA423F00A8CC97 /* Pass.swift */,
+			);
+			path = Pass;
+			sourceTree = "<group>";
+		};
+		49391B8C2100EFD700EE097F /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				494D4DE320D928DC00C8876A /* Errors.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		496C473420D80059004B83D7 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +128,10 @@
 		4981F5D320CE7C520092C788 /* Amusement Park Pass Generator */ = {
 			isa = PBXGroup;
 			children = (
+				49391B8C2100EFD700EE097F /* Errors */,
+				49391B8B2100EFCC00EE097F /* Pass */,
+				49391B8A2100EFBF00EE097F /* Area */,
+				49391B892100EF9E00EE097F /* Entrants */,
 				496C473420D80059004B83D7 /* Tests */,
 				4981F5D420CE7C520092C788 /* AppDelegate.swift */,
 				4981F5D620CE7C520092C788 /* ViewController.swift */,
@@ -98,12 +139,6 @@
 				4981F5DB20CE7C530092C788 /* Assets.xcassets */,
 				4981F5DD20CE7C530092C788 /* LaunchScreen.storyboard */,
 				4981F5E020CE7C530092C788 /* Info.plist */,
-				49AD6B6B20CEAD8C004AFC63 /* Entrant.swift */,
-				494D4DE120D9286A00C8876A /* Area.swift */,
-				494D4DE320D928DC00C8876A /* Errors.swift */,
-				494D4DE520D929CE00C8876A /* Guest.swift */,
-				494D4DE720D92A3800C8876A /* Employee.swift */,
-				49F2E45F20DA423F00A8CC97 /* Pass.swift */,
 			);
 			path = "Amusement Park Pass Generator";
 			sourceTree = "<group>";
@@ -191,6 +226,7 @@
 				494D4DE420D928DC00C8876A /* Errors.swift in Sources */,
 				494D4DE820D92A3800C8876A /* Employee.swift in Sources */,
 				496C473820D80E71004B83D7 /* RideAccessTests.swift in Sources */,
+				49391B882100EF9800EE097F /* Vendor.swift in Sources */,
 				496C473620D80096004B83D7 /* EmployeeAreaTests.swift in Sources */,
 				4981F5D520CE7C520092C788 /* AppDelegate.swift in Sources */,
 			);
