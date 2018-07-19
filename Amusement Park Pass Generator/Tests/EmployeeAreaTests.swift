@@ -13,7 +13,7 @@ class EmployeeAreaTest {
     // Food Service Employees should be able to access Amusement Areas
     static func isFoodServiceEmployeeInAmusementAreasAllowed() {
         do {
-            let employee = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
+            let employee = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
             var pass = EmployeePass(entrant: employee)
             
             let area = Area(area: .amusementAreas)
@@ -28,7 +28,7 @@ class EmployeeAreaTest {
     // Food Service Employees should be able to access Kitchen Areas
     static func isFoodServiceEmployeeInKitchenAreasAllowed() {
         do {
-            let employee = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
+            let employee = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
             var pass = EmployeePass(entrant: employee)
             
             let area = Area(area: .kitchenAreas)
@@ -43,7 +43,7 @@ class EmployeeAreaTest {
     // Food Service Employees should not be able to access Ride Control Areas
     static func isFoodServiceEmployeeInRideAreasAllowed() {
         do {
-            let employee = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
+            let employee = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
             var pass = EmployeePass(entrant: employee)
             
             let area = Area(area: .rideControlAreas)
@@ -58,7 +58,7 @@ class EmployeeAreaTest {
     // Ride Service Employees should be able to access Ride Control Areas
     static func isRideServiceEmployeeInRideAreasAllowed() {
         do {
-            let employee = try Employee(entrantType: .rideServicesEmployee, dateOfBirth: nil, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
+            let employee = try Employee(entrantType: .rideServicesEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
             var pass = EmployeePass(entrant: employee)
             
             let area = Area(area: .rideControlAreas)
@@ -73,7 +73,7 @@ class EmployeeAreaTest {
     // Ride Service Employees should be able to access Kitchen Control Areas
     static func isRideServiceEmployeeInKitchenAreasAllowed() {
         do {
-            let employee = try Employee(entrantType: .rideServicesEmployee, dateOfBirth: nil, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
+            let employee = try Employee(entrantType: .rideServicesEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
             var pass = EmployeePass(entrant: employee)
             
             let area = Area(area: .kitchenAreas)
@@ -88,7 +88,7 @@ class EmployeeAreaTest {
     // Maintenance Employees should not be able to access Office Areas
     static func isMaintenanceEmployeeInOfficeAreasAllowed() {
         do {
-            let employee = try Employee(entrantType: .maintenanceEmployee, dateOfBirth: nil, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
+            let employee = try Employee(entrantType: .maintenanceEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
             var pass = EmployeePass(entrant: employee)
             
             let area = Area(area: .officheAreas)
@@ -103,7 +103,7 @@ class EmployeeAreaTest {
     // Manager Employees should be able to access Office Areas
     static func isManagerEmployeeInOfficeAreasAllowed() {
         do {
-            let employee = try Employee(entrantType: .managerEmployee, dateOfBirth: nil, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
+            let employee = try Employee(entrantType: .managerEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
             var pass = EmployeePass(entrant: employee)
             
             let area = Area(area: .officheAreas)
@@ -118,7 +118,7 @@ class EmployeeAreaTest {
     // Manager Employees should be able to access Maintenance Areas
     static func isManagerEmployeeInMaintenanceAreasAllowed() {
         do {
-            let employee = try Employee(entrantType: .managerEmployee, dateOfBirth: nil, firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
+            let employee = try Employee(entrantType: .managerEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "John", lastName: "Smith", streetAddress: "123, baker street", city: "Portland", state: "Oregon", zipCode: "12345")
             var pass = EmployeePass(entrant: employee)
             
             let area = Area(area: .maintenanceAreas)

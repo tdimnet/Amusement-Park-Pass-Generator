@@ -126,9 +126,6 @@ class ViewController: UIViewController {
                 managerEntrantButton.isSelected = false
                 vendorEntrantButton.isSelected = false
                 
-                // Set the background color
-                subEntrantTypeView.backgroundColor = .lightGray
-                
                 // Disabled SSN and Project Field
                 ssnField.isEnabled = false
                 projectField.isEnabled = false
@@ -260,6 +257,7 @@ class ViewController: UIViewController {
                     let employee = try Employee(
                         entrantType: .foodServicesEmployee,
                         dateOfBirth: nil,
+                        socialSecurityNumber: ssnField.text ?? "",
                         firstName: firstNameField.text ?? "",
                         lastName: lastNameField.text ?? "",
                         streetAddress: streetAddressField.text ?? "",

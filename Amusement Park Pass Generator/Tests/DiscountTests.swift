@@ -54,7 +54,7 @@ class DiscountTests {
     // Food Service Employee -> Food Service Employee has 15% discount on Food and 25% discount on Merchandise
     static func isFoodServiceEmployeeHasDiscount() {
         do {
-            let foodServiceEmploye = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: "12345")
+            let foodServiceEmploye = try Employee(entrantType: .foodServicesEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: "12345")
             if foodServiceEmploye.getFoodDiscount() == 0.15 && foodServiceEmploye.getMerchandiseDiscount() == 0.25 {
                 print("DISCOUNT TEST: OK: Food Service Employee has 15% discount on Food and 25% discount on Merchandise!")
             } else {
@@ -68,7 +68,7 @@ class DiscountTests {
     // Ride Service Employee -> Ride Service Employee has 15% discount on Food and 25% discount on Merchandise
     static func isRideServiceEmployeeHasDiscount() {
         do {
-            let rideServiceEmploye = try Employee(entrantType: .rideServicesEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: "12345")
+            let rideServiceEmploye = try Employee(entrantType: .rideServicesEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: "12345")
             if rideServiceEmploye.getFoodDiscount() == 0.15 && rideServiceEmploye.getMerchandiseDiscount() == 0.25 {
                 print("DISCOUNT TEST: OK: Ride Service Employee has 15% discount on Food and 25% discount on Merchandise!")
             } else {
@@ -82,7 +82,7 @@ class DiscountTests {
     // Maintenance Service Employee -> Maintenance Service Employee has 15% discount on Food and 25% discount on Merchandise
     static func isMaintenanceServiceEmployeeHasDiscount() {
         do {
-            let maintenanceServiceEmploye = try Employee(entrantType: .maintenanceEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: "12345")
+            let maintenanceServiceEmploye = try Employee(entrantType: .maintenanceEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: "12345")
             if maintenanceServiceEmploye.getFoodDiscount() == 0.15 && maintenanceServiceEmploye.getMerchandiseDiscount() == 0.25 {
                 print("DISCOUNT TEST: OK: Maintenance Service Employee has 15% discount on Food and 25% discount on Merchandise!")
             } else {
@@ -96,7 +96,7 @@ class DiscountTests {
     // Manager Employee -> Manager Employee has 25% discount on Food and 25% discount on Merchandise
     static func isManagerEmployeeHasDiscount() {
         do {
-            let managerEmploye = try Employee(entrantType: .managerEmployee, dateOfBirth: nil, firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: "12345")
+            let managerEmploye = try Employee(entrantType: .managerEmployee, dateOfBirth: nil, socialSecurityNumber: "721-07-4426", firstName: "firstName", lastName: "lastName", streetAddress: "streetAddress", city: "city", state: "state", zipCode: "12345")
             if managerEmploye.getFoodDiscount() == 0.25 && managerEmploye.getMerchandiseDiscount() == 0.25 {
                 print("DISCOUNT TEST: OK: Manager Employee has 25% discount on Food and 25% discount on Merchandise!")
             } else {
