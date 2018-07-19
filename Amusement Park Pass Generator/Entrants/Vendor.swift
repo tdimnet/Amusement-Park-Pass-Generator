@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+class Vendor: Entrant {
+    let firstName: String
+    let lastName: String
+    let vendorCompany: String
+    let dateOfBirth: Date
+    let dateOfVisit: Date
+    
+    init(firstName: String, lastName: String, vendorCompany: String, dateOfBirth: Date, dateOfVisit: Date) throws {
+        guard !firstName.isEmpty else { throw EntrantErrors.nameError(reason: "First name is missing") }
+        guard !lastName.isEmpty else { throw EntrantErrors.nameError(reason: "First name is missing") }
+        guard !vendorCompany.isEmpty else { throw EntrantErrors.nameError(reason: "First name is missing") }
+        
+        self.firstName = firstName
+        self.lastName = lastName
+        self.vendorCompany = vendorCompany
+        self.dateOfBirth = dateOfBirth
+        self.dateOfVisit = dateOfVisit
+    }
+}
