@@ -64,3 +64,30 @@ class Employee: Entrant, birthDateProtocol {
         return (hasError, nil)
     }
 }
+
+
+class ContractEmployee: Employee {
+    let projectNumber: String
+    
+    init(entrantType: EntrantsTypesEnum?, dateOfBirth: Date?, socialSecurityNumber: String, firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: String, projectNumber: String) throws {
+        guard !projectNumber.isEmpty else { throw EntrantErrors.entrantError(reason: "Project Number is missing") }
+        
+        self.projectNumber = projectNumber
+        
+        try super.init(entrantType: entrantType, dateOfBirth: dateOfBirth, socialSecurityNumber: socialSecurityNumber, firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
