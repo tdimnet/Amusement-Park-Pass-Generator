@@ -276,6 +276,30 @@ class ViewController: UIViewController {
                     }
                     showAlertWith(title: "Something is missing!", message: message)
                 }
+            } else if entrantType == "Vendor" {
+                print("Entrant is a vendor")
+                do {
+                    let vendor = try Vendor(
+                        entrantType: .vendor,
+                        firstName: firstNameField.text ?? "",
+                        lastName: lastNameField.text ?? "",
+                        vendorCompany: companyField.text ?? "",
+                        dateOfBirth: Date(),
+                        dateOfVisit: Date()
+                    )
+                } catch let error {
+                    guard let error = error as? EntrantErrors else { return }
+                    var message = ""
+                    switch error {
+                    case .entrantError(let reason):
+                        message = reason
+                    case .nameError(let reason):
+                        message = reason
+                    case .addressError(let reason):
+                        message = reason
+                    }
+                    showAlertWith(title: "Something is missing!", message: message)
+                }
             } else {
                 print("Do nothing for now")
             }

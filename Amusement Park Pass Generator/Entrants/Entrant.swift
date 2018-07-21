@@ -16,6 +16,7 @@ enum EntrantsTypesEnum: String {
     case rideServicesEmployee
     case maintenanceEmployee
     case managerEmployee
+    case vendor
 }
 
 extension EntrantsTypesEnum {
@@ -35,6 +36,8 @@ extension EntrantsTypesEnum {
             return "Hourly Employee - Maintenance"
         case .managerEmployee:
             return "Manager"
+        case .vendor:
+            return "Vendor"
         }
     }
 }
@@ -52,6 +55,8 @@ extension EntrantsTypesEnum {
             return 4
         case .managerEmployee:
             return 5
+        case .vendor:
+            return 6
         }
     }
 }
