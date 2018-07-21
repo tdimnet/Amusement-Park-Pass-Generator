@@ -30,6 +30,24 @@ extension vendorCompanyEnum {
     }
 }
 
+struct Company {
+    let companies: [vendorCompanyEnum] = [
+        vendorCompanyEnum.acme,
+        vendorCompanyEnum.fedex,
+        vendorCompanyEnum.nwElectrical,
+        vendorCompanyEnum.orkin
+    ]
+    
+    func isCompanyExist(companyName: String) -> Bool {
+        for company in companies {
+            if companyName == company.name {
+                return true
+            }
+        }
+        return false
+    }
+}
+
 class Vendor: Entrant {
     let firstName: String
     let lastName: String
@@ -55,15 +73,21 @@ class Vendor: Entrant {
     }
     
     func checkVendorCompany(company: String) -> (hasError: Bool, errorMessage: String?) {
-        
-        
+        let vendorCompanies = Company()
+        var hasError = Bool()
+        var errorMessage = String()
         
         if company.isEmpty {
-            let hasError = true
-            let errorMessage = "Vendor Entrant must have a company"
+            hasError = true
+            errorMessage = "Vendor Entrant must have a company"
+            return(hasError, errorMessage)
+        } else if !vendorCompanies.isCompanyExist(companyName: company) {
+            hasError = true
+            errorMessage = "The choosen company does not exist in our files"
             return(hasError, errorMessage)
         }
-        return (false, nil)
+        hasError = false
+        return (hasError, errorMessage)
     }
 }
 
