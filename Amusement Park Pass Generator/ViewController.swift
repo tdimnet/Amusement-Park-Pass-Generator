@@ -247,8 +247,6 @@ class ViewController: UIViewController {
     
     // Generate Pass Event
     @IBAction func onPressGeneratePassButton(_ sender: UIButton) {
-        
-        
         if let entrantType = self.entrantType {
             if entrantType == "Employee" {
                 print("Entrant is an employee")
@@ -281,6 +279,8 @@ class ViewController: UIViewController {
             } else {
                 print("Do nothing for now")
             }
+        } else {
+            showAlertWith(title: "Entrant Type is missing", message: "You need to choose an entrant type first")
         }
     }
     
