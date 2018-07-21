@@ -15,7 +15,7 @@ class Vendor: Entrant {
     let dateOfBirth: Date
     let dateOfVisit: Date
     
-    init(firstName: String, lastName: String, vendorCompany: String, dateOfBirth: Date, dateOfVisit: Date) throws {
+    init(entrantType: EntrantsTypesEnum?,firstName: String, lastName: String, vendorCompany: String, dateOfBirth: Date, dateOfVisit: Date) throws {
         guard !firstName.isEmpty else { throw EntrantErrors.nameError(reason: "First name is missing") }
         guard !lastName.isEmpty else { throw EntrantErrors.nameError(reason: "First name is missing") }
         guard !vendorCompany.isEmpty else { throw EntrantErrors.nameError(reason: "First name is missing") }
@@ -25,5 +25,6 @@ class Vendor: Entrant {
         self.vendorCompany = vendorCompany
         self.dateOfBirth = dateOfBirth
         self.dateOfVisit = dateOfVisit
+        try super.init(entrantType: entrantType)
     }
 }
