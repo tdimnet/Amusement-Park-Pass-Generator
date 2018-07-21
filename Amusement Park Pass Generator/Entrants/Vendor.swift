@@ -48,14 +48,22 @@ class Vendor: Entrant {
         
         guard !firstName.isEmpty else { throw EntrantErrors.nameError(reason: "First name is missing") }
         guard !lastName.isEmpty else { throw EntrantErrors.nameError(reason: "First name is missing") }
-        guard self.checkVendorCompany(company: vendorCompany) else { throw EntrantErrors.nameError(reason: "Company name is missing") }
+        guard !self.checkVendorCompany(company: vendorCompany).hasError else {
+            let errorMessage = self.checkVendorCompany(company: vendorCompany).errorMessage
+            throw EntrantErrors.nameError(reason: errorMessage!)
+        }
     }
     
-    func checkVendorCompany(company: String) -> Bool {
+    func checkVendorCompany(company: String) -> (hasError: Bool, errorMessage: String?) {
+        
+        
+        
         if company.isEmpty {
-            return false
+            let hasError = true
+            let errorMessage = "Vendor Entrant must have a company"
+            return(hasError, errorMessage)
         }
-        return true
+        return (false, nil)
     }
 }
 
