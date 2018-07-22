@@ -30,6 +30,36 @@ extension vendorCompanyEnum {
     }
 }
 
+extension vendorCompanyEnum {
+    var accessibleArea: [areaEnum] {
+        switch self {
+        case .acme:
+            return [
+                .kitchenAreas
+            ]
+        case .orkin:
+            return [
+                .amusementAreas,
+                .rideControlAreas,
+                .kitchenAreas
+            ]
+        case .fedex:
+            return [
+                .maintenanceAreas,
+                .officeAreas
+            ]
+        case .nwElectrical:
+            return [
+                .amusementAreas,
+                .rideControlAreas,
+                .kitchenAreas,
+                .maintenanceAreas,
+                .officeAreas
+            ]
+        }
+    }
+}
+
 struct Company {
     let companies: [vendorCompanyEnum] = [
         vendorCompanyEnum.acme,
