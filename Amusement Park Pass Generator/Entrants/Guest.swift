@@ -36,7 +36,7 @@ extension GuestEntrantTypeEnum {
 extension GuestEntrantTypeEnum {
     func canEntrantSkipRideLines() -> (isAbleToSkipLines: Bool, message: String) {
         switch self {
-        case .vipGuest:
+        case .vipGuest, .seasonPassGuest, .seniorGuest:
             let isAble = true
             let message = "Entrant is able to skip ride lines"
             return (isAble, message)
