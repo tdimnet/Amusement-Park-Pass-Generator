@@ -245,6 +245,14 @@ class ViewController: UIViewController {
         sender.isSelected = true
     }
     
+    func onSelectGuestType() {
+        let guestEntrant = [
+            EntrantsTypesEnum.classicGuest,
+            EntrantsTypesEnum.freeChildGuest,
+            EntrantsTypesEnum.vipGuest
+        ]
+    }
+    
     // Generate Pass Event
     @IBAction func onPressGeneratePassButton(_ sender: UIButton) {
         if let entrantType = self.entrantType {

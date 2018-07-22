@@ -24,6 +24,8 @@
 		4981F5DC20CE7C530092C788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4981F5DB20CE7C530092C788 /* Assets.xcassets */; };
 		4981F5DF20CE7C530092C788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4981F5DD20CE7C530092C788 /* LaunchScreen.storyboard */; };
 		49AD6B6C20CEAD8C004AFC63 /* Entrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD6B6B20CEAD8C004AFC63 /* Entrant.swift */; };
+		49DF8AA72104E32500AD23A8 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DF8AA62104E32500AD23A8 /* Project.swift */; };
+		49DF8AA92104E39700AD23A8 /* manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DF8AA82104E39700AD23A8 /* manager.swift */; };
 		49F2E46020DA423F00A8CC97 /* Pass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2E45F20DA423F00A8CC97 /* Pass.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		4981F5DE20CE7C530092C788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4981F5E020CE7C530092C788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49AD6B6B20CEAD8C004AFC63 /* Entrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrant.swift; sourceTree = "<group>"; };
+		49DF8AA62104E32500AD23A8 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		49DF8AA82104E39700AD23A8 /* manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manager.swift; sourceTree = "<group>"; };
 		49F2E45F20DA423F00A8CC97 /* Pass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +72,7 @@
 				494D4DE520D929CE00C8876A /* Guest.swift */,
 				494D4DE720D92A3800C8876A /* Employee.swift */,
 				49391B872100EF9800EE097F /* Vendor.swift */,
+				49DF8AA82104E39700AD23A8 /* manager.swift */,
 			);
 			path = Entrants;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 		4981F5D320CE7C520092C788 /* Amusement Park Pass Generator */ = {
 			isa = PBXGroup;
 			children = (
+				49DF8AA52104E30B00AD23A8 /* Project */,
 				49391B8C2100EFD700EE097F /* Errors */,
 				49391B8B2100EFCC00EE097F /* Pass */,
 				49391B8A2100EFBF00EE097F /* Area */,
@@ -141,6 +147,14 @@
 				4981F5E020CE7C530092C788 /* Info.plist */,
 			);
 			path = "Amusement Park Pass Generator";
+			sourceTree = "<group>";
+		};
+		49DF8AA52104E30B00AD23A8 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				49DF8AA62104E32500AD23A8 /* Project.swift */,
+			);
+			path = Project;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,11 +238,13 @@
 				493978A520D2AF0F0080BE0A /* EmployeeTests.swift in Sources */,
 				4981F5D720CE7C520092C788 /* ViewController.swift in Sources */,
 				494D4DE420D928DC00C8876A /* Errors.swift in Sources */,
+				49DF8AA92104E39700AD23A8 /* manager.swift in Sources */,
 				494D4DE820D92A3800C8876A /* Employee.swift in Sources */,
 				496C473820D80E71004B83D7 /* RideAccessTests.swift in Sources */,
 				49391B882100EF9800EE097F /* Vendor.swift in Sources */,
 				496C473620D80096004B83D7 /* EmployeeAreaTests.swift in Sources */,
 				4981F5D520CE7C520092C788 /* AppDelegate.swift in Sources */,
+				49DF8AA72104E32500AD23A8 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

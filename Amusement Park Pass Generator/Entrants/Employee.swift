@@ -8,6 +8,56 @@
 
 import Foundation
 
+enum EmployeeEntrantTypeEnum {
+    case foodServiceEmployee
+    case rideServiceEmployee
+    case maintenanceEmployee
+    case contractEmployee
+}
+
+extension EmployeeEntrantTypeEnum {
+    var name: String {
+        switch self {
+        case .foodServiceEmployee:
+            return "Food Service Employee"
+        case .rideServiceEmployee:
+            return "Ride Service Employee"
+        case .maintenanceEmployee:
+            return "Maintenance Employee"
+        case .contractEmployee:
+            return "Contract Employee"
+        }
+    }
+}
+
+extension EmployeeEntrantTypeEnum {
+    func canEntrantSkipRideLines() -> (isAbleToSkipLines: Bool, message: String) {
+        let isAble = false
+        let message = "Entrant cannot skip ride lines"
+        return (isAble, message)
+    }
+}
+
+extension EmployeeEntrantTypeEnum {
+    func getFoodDiscount() -> Double {
+        switch self {
+        case .foodServiceEmployee, .rideServiceEmployee, .maintenanceEmployee:
+            return 0.15
+        default:
+            return 0.00
+        }
+    }
+    
+    func getMerchandiseDiscount() -> Double {
+        switch self {
+        case .foodServiceEmployee, .rideServiceEmployee, .maintenanceEmployee:
+            return 0.25
+        default:
+            return 0.00
+        }
+    }
+}
+
 class Employee: Entrant, birthDateProtocol {
     var dateOfBirth: Date?
     
@@ -62,51 +112,6 @@ class Employee: Entrant, birthDateProtocol {
         }
         let hasError = false
         return (hasError, nil)
-    }
-}
-
-
-enum projectNumberEnum {
-    case projectNumber1001
-    case projectNumber1002
-    case projectNumber1003
-    case projectNumber2001
-    case projectNumber2002
-}
-
-extension projectNumberEnum {
-    var name: String {
-        switch self {
-        case .projectNumber1001:
-            return "1001"
-        case .projectNumber1002:
-            return "1002"
-        case .projectNumber1003:
-            return "1003"
-        case .projectNumber2001:
-            return "2001"
-        case .projectNumber2002:
-            return "2002"
-        }
-    }
-}
-
-struct ProjectNumber {
-    let projects: [projectNumberEnum] = [
-        projectNumberEnum.projectNumber1001,
-        projectNumberEnum.projectNumber1002,
-        projectNumberEnum.projectNumber1003,
-        projectNumberEnum.projectNumber2001,
-        projectNumberEnum.projectNumber2002,
-    ]
-    
-    func isProjectNumberExist(projectNumberName: String) -> Bool {
-        for project in projects {
-            if projectNumberName == project.name {
-                return true
-            }
-        }
-        return false
     }
 }
 
