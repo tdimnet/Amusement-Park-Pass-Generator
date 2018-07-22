@@ -45,6 +45,7 @@ extension EntrantsTypesEnum {
     }
 }
 
+/*
 extension EntrantsTypesEnum {
     var accessLevel: Int {
         switch self {
@@ -65,6 +66,7 @@ extension EntrantsTypesEnum {
         }
     }
 }
+*/
 
 extension EntrantsTypesEnum {
     func canEntrantSkipRideLines() -> (isAbleToSkipLines: Bool, message: String) {

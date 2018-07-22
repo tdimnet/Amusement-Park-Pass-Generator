@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/*
 class GuestAreaTests {
     
     // Guest should be able to access Amusement Areas
@@ -119,3 +119,4 @@ class GuestAreaTests {
         }
     }
 }
+ */

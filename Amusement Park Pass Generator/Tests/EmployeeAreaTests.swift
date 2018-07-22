@@ -8,6 +8,7 @@
 
 import Foundation
 
+/*
 class EmployeeAreaTest {
     
     // Food Service Employees should be able to access Amusement Areas
@@ -140,3 +141,4 @@ class EmployeeAreaTest {
         }
     }
 }
+*/

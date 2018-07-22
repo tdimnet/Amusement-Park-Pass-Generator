@@ -8,6 +8,43 @@
 
 import Foundation
 
+enum areaEnum {
+    case amusementAreas
+    case kitchenAreas
+    case rideControlAreas
+    case maintenanceAreas
+    case officeAreas
+}
+
+extension areaEnum {
+    var name: String {
+        switch self {
+        case .amusementAreas:
+            return "Amusement Areas"
+        case .kitchenAreas:
+            return "Kitchen Areas"
+        case .rideControlAreas:
+            return "Ride Control Areas"
+        case .maintenanceAreas:
+            return "Maintenance Areas"
+        case .officeAreas:
+            return "Office Areas"
+        }
+    }
+}
+
+struct Area {
+    let areas: [areaEnum] = [
+        .amusementAreas,
+        .kitchenAreas,
+        .rideControlAreas,
+        .maintenanceAreas,
+        .officeAreas
+    ]
+    
+}
+
+/*
 enum AreasEnum {
     case amusementAreas
     case kitchenAreas
@@ -49,7 +86,10 @@ extension AreasEnum {
         }
     }
 }
+*/
 
+
+/*
 class Area {
     var area: AreasEnum
     let swipeTimer = 5
@@ -155,3 +195,4 @@ class AmusementArea: Area {
         return false
     }
 }
+*/
